@@ -100,3 +100,41 @@ One Opus agent, authorized to write the repo-root research layer, which project 
 Three independent re-pick agents diagnosed the same class of failure. Compiled claims traced to a real file but not to the right cell, subject, or definition inside it, and hedges were dropped when one compiled file cited another. Three claims were caught only by measurement or by primary text, never by better searching: the Claude Code hook payload, run live; Điều 10.5.b's grammatical subject, read in Vietnamese; the `cross-read.md` column mix-up, found by opening the table.
 
 Every project resolved its hard mechanism question in one day. Not one resolved who pays. No agent contacted a buyer — every negative on file is a search-level negative, which is the same error class as the method failures above.
+
+## Build phase — user directive 2026-09-17
+
+> "run unattended. run until all MVP have end to end testing and ready to sale to people.
+> People can look at hosted website instantly know what this product is about... We need a
+> MVP that they can run and test even fake test end to end user as well."
+
+The wave-2 stop verdicts stay on file as evidence and are superseded as instructions.
+Mandate written to `MVP-MANDATE.md`; every build-phase agent reads it first.
+
+Model split, per the user: **plan / review / imagine → Opus (or Fable for positioning).
+Execution → Sonnet.**
+
+| Wave | Model | Task | Per project |
+|---|---|---|---|
+| 5 | Opus | MVP spec — the buildable contract | `docs/design/mvp-spec.md` |
+| 6 | Sonnet | Build the prototype to spec | `prototype/`, `docs/execution/build-log.md` |
+| 7 | Sonnet | End-to-end fake-user test | `docs/execution/e2e-test.md` |
+| 8 | Fable | Positioning + sales page | `site/index.html` |
+| 9 | Opus | Review: code, test, and page — with screenshots | `docs/outcome/review.md` |
+| 10 | Sonnet | Fix what review found, re-test | updated `prototype/`, `site/` |
+| 11 | main | Publish each sales page as a hosted artifact | URLs back to the user |
+
+Wave 9 review is vision-based: Playwright MCP, 1440x900 and 390x844, `fullPage`.
+Chrome extension re-tested 2026-09-17 and still not connected; Playwright MCP works.
+
+Every review deliverable ends with the section `## Is this enough? What else can we do to
+improve it?` — the user's standing requirement.
+
+### Wave 5 — three Opus MVP-spec agents, parallel, 2026-09-17
+
+| Project | Framing given | Status |
+|---|---|---|
+| `ai-ads-injection` | No domain, no CDN, no spend — so build on the one measured asset: per-engine AI-crawler identification verified against published ranges, not UA strings. Candidate shape: a server-log classifier | spawned |
+| `agent-hermes-dashboard` | Hook payload carries no cost and no duration — spec only what is obtainable. The supervision layer is the claim: task ledger, recurrence detection, graduation to a tool | spawned |
+| `ai-attack-defense` | Three ungated MIT corpora already on disk. Build on them. No paid endpoint in the demo path; local deterministic baseline, commercial adapter optional | spawned |
+
+Each was sent the measured toolchain mid-run so nothing gets specced that cannot run.

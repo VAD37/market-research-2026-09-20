@@ -44,3 +44,13 @@ Do not skip the review-against-market step. `../../docs/findings/` and `../../do
 - Measured beats argued. A claim about what an AI crawler does, what an agent costs, what a defense catches — go measure it and put the output in `raw/`.
 - Test only against infrastructure you control, or public material published for study. No third-party targeting.
 - Agents do not commit. The main thread commits.
+
+## Git — changed 2026-09-17
+
+**Each project is its own git repository**, rooted at `projects/<project>/`. The parent
+research repo no longer tracks project contents; it gitignores them and keeps only
+`CLAUDE.md`, `MVP-MANDATE.md` and `ORCHESTRATION.md`. Per-project history exists so each
+project can be reviewed and its quality checked on its own.
+
+The rule is unchanged otherwise: **agents never run git.** The main thread commits, into
+whichever project repo the work landed in, after every agent lands.
