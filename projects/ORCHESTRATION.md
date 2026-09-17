@@ -199,3 +199,60 @@ Waves 7 and 8 run concurrently per project — 7 owns `prototype/` and
 `docs/execution/`, 8 owns `site/`. Disjoint file sets, both told the other is live.
 
 Port assignment for local sales-page review: 8801 ads, 8802 hermes, 8803 attack-defense.
+
+---
+
+# MANDATE — concurrency cap (user, 2026-09-17)
+
+**Never more than 3 agents running at once, machine-wide.** Main thread is the scheduler
+and does not count toward the 3. Subagents of a subagent count. The cap is a hard ceiling,
+not a target — 2 is fine, 4 is a violation.
+
+This file is the mandate. Read it before every spawn decision.
+
+## Scheduler rules
+
+1. Before spawning, count live agents. If the count is already 3, do not spawn — queue.
+2. Spawn only on a completion notification, and only up to the free slots.
+3. One agent per project at a time is the default. Two agents on one project are allowed
+   only when their file sets are provably disjoint AND a slot is free — and each must be
+   told in its prompt that the other is live and which paths it may not touch.
+4. `infra/` counts as a project for scheduling. It is not free.
+5. A stopped agent is not a failed agent. Record the stop in that project's `STATE.md`
+   so the next agent does not read an orphaned "starting work" entry as a crash, and
+   restore the working tree with `git checkout` if the stop left it half-mutated.
+6. Re-queued work goes back at the FRONT of the queue, not the back. Do not let a task
+   starve because new waves keep jumping it.
+
+## Queue — live
+
+Live now (3/3):
+
+| Agent | Model | Project | Owns |
+|---|---|---|---|
+| parity-vi build | Sonnet | ai-attack-defense | `prototype/`, `docs/execution/` |
+| Traefik hosting | Sonnet | infra | `infra/` |
+| ads sales page | Fable | ai-ads-injection | `site/` |
+
+Queued, in order:
+
+| # | Agent | Model | Project | Note |
+|---|---|---|---|---|
+| 1 | aicrawlcheck e2e | Sonnet | ai-ads-injection | re-queued, was stopped for the cap |
+| 2 | Foreman e2e | Sonnet | agent-hermes-dashboard | re-queued, was stopped for the cap |
+| 3 | Foreman sales page | Fable | agent-hermes-dashboard | re-queued, was stopped for the cap |
+| 4 | parity-vi e2e | Sonnet | ai-attack-defense | waits on build |
+| 5 | parity-vi sales page | Fable | ai-attack-defense | waits on build |
+| 6 | review: ads | Opus | ai-ads-injection | wave 9, vision review, needs e2e + site |
+| 7 | review: hermes | Opus | agent-hermes-dashboard | wave 9 |
+| 8 | review: attack-defense | Opus | ai-attack-defense | wave 9 |
+| 9-11 | fix-and-retest ×3 | Sonnet | all | wave 10, one per project |
+
+Wave 11 (publish to `dev1/dev2/dev3.vad37.com`) is main-thread work and is gated on the
+Cloudflare token gaining **Zone · DNS · Edit**.
+
+## Why the cap
+
+Six concurrent agents contend on one browser, one Docker daemon, and one set of ports,
+and the main thread cannot hold an accurate picture of six moving trees. Three is what
+stays reviewable.
