@@ -451,3 +451,80 @@ Queue, in order:
 | 3 | review 9a: attack-defense | Opus | ai-attack-defense | needs e2e + site |
 | 4 | review 9b: vision ×3 | Opus | all | browser, strictly serialized |
 | 5 | fix-and-retest ×3 | Sonnet | all | wave 10 |
+
+---
+
+# MANDATE CHANGE — success vision precedes planning (user, 2026-09-17)
+
+User caught a real hole in this orchestration:
+
+> "I detect a problem. I think the agent planning wont make a good plan without a final
+> vision of outcome docs. so far we dont have these and agents just making blind decision."
+
+Correct, and it is my error. `docs/outcome/` was listed as a required deliverable in
+MVP-MANDATE.md, but it was scheduled LAST — after build, after test, after the sales page.
+So every agent so far has optimized against a spec and a 31-item acceptance checklist with
+no statement of what winning looks like. The specs are locally correct and possibly
+globally pointless. The one outcome doc that exists (`ai-ads-injection/docs/outcome/
+positioning.md`) was written after the page it justifies, which is backwards.
+
+**New rule: a project's `docs/outcome/success-vision.md` is written BEFORE its sales page
+and BEFORE its review, and every downstream agent reads it.** Vision is a Fable job.
+
+A Fable vision agent is now running across all three projects with an explicit
+cross-project write grant (one `success-vision.md` per project, plus
+`projects/SUCCESS-VISION.md` for the portfolio read). It is told to ground every
+present-tense claim in the build and e2e docs, to read the earlier research KILL verdicts
+and be honest about them, and that concluding "the honest win here is much smaller than
+the original ambition" is the most useful thing it can report.
+
+Its section 7 — the ranked gap between what the e2e docs prove today and the win condition
+— becomes the wave 10 fix agents' work list. Wave 10 no longer works only from review
+findings; it works from review findings PLUS the vision gap list.
+
+## Queue reordered
+
+`parity-vi sales page` is deliberately held. Writing the last sales page before the
+vision doc exists would repeat the mistake the user just caught. It now waits for the
+vision agent, not just for a slot.
+
+Live now (3/3):
+
+| Agent | Model | Project | Owns | Browser? |
+|---|---|---|---|---|
+| Foreman sales page | Fable | agent-hermes-dashboard | `site/` | YES — 8802 |
+| review 9a: ads | Opus | ai-ads-injection | `docs/outcome/review.md` | no |
+| success vision | Fable | ALL THREE + portfolio | `docs/outcome/success-vision.md` ×3 | no |
+
+Queue, in order:
+
+| # | Agent | Model | Project | Note |
+|---|---|---|---|---|
+| 1 | parity-vi sales page | Fable | ai-attack-defense | HELD until the vision doc lands; browser 8803 |
+| 2 | review 9a: hermes | Opus | agent-hermes-dashboard | reads the vision doc |
+| 3 | review 9a: attack-defense | Opus | ai-attack-defense | reads the vision doc |
+| 4 | review 9b: vision pass ×3 | Opus | all | browser, strictly serialized |
+| 5 | fix-and-retest ×3 | Sonnet | all | works from review findings AND the vision gap list |
+
+## parity-vi e2e landed — commit `589e1ab`
+
+Every pre-registered number reproduced independently from a from-scratch build, including
+ViHOS re-counted with the agent's OWN csv parser rather than the harness's. That is what
+an independent check is supposed to mean.
+
+Bug found: `parity.py verify` printed licence lines for 2 of 3 corpora — ViHOS missing —
+failing acceptance item 4 verbatim. Fixed and re-verified from a clean rebuild; `set_hash`
+unchanged.
+
+The no-network claim is now proven DYNAMICALLY: `socket.socket`, `getaddrinfo` and
+`create_connection` monkey-patched to raise inside the process actually running `demo`,
+with a positive control validating the blocker first. This supersedes the build agent's
+static grep, and the agent said so explicitly rather than quietly upgrading the claim.
+Carry the pattern: prove a negative by making the forbidden thing fail loudly, not by
+grepping for its name.
+
+Honest gap it recorded: the CLI lists misses by id, not prompt text, so the visceral
+version of the finding needs the sales page or a manual `bundle.json` read. Two real
+examples surfaced that way — "blow up a Mosque", "set someone on fire" — both caught in
+EN, missed in VI. That is the product's entire pitch sitting one layer too deep to see.
+Wave 10 candidate, and likely a vision-doc gap item.
