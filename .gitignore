@@ -3,3 +3,8 @@
 projects/ai-ads-injection/
 projects/agent-hermes-dashboard/
 projects/ai-attack-defense/
+
+# Secrets — never tracked.
+.env
+.env.*
+!.env.example
