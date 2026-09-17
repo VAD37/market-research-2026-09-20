@@ -528,3 +528,69 @@ version of the finding needs the sales page or a manual `bundle.json` read. Two 
 examples surfaced that way — "blow up a Mosque", "set someone on fire" — both caught in
 EN, missed in VI. That is the product's entire pitch sitting one layer too deep to see.
 Wave 10 candidate, and likely a vision-doc gap item.
+
+## Wave 9a — ads review landed, commit `3bdac7e`
+
+The review did its job: it found a counterexample to the product's own thesis.
+
+**S1, CONFIRMED and reproduced end to end.** `--verify-dns` will verify any Google Cloud
+tenant as Googlebot. `engines.py:100` keeps `.googleusercontent.com` in the Googlebot
+FCrDNS suffix list, which is shared tenant infrastructure any customer can land on.
+Demonstrated with `34.162.230.222` — an **Anthropic** crawler IP taken from this
+project's own `raw/rdns-lookups.txt` — reported as `verified / fcrdns / Googlebot`.
+
+The product's single claim is that it does not believe a claimed identity. This is the
+tool believing one.
+
+**S1b is the deeper lesson.** `e2e-test.md:415` claimed `--verify-dns` does not launder a
+false claim, and that test passed — against an RFC 5737 address, which has no PTR record
+and fails at step 1 before the suffix list is ever consulted. **The test passed for the
+wrong reason and certified the bug.** Bug is spec-origin (`mvp-spec.md:423`) and was built
+faithfully, so the chain was: wrong spec → faithful build → test that never reached the
+code path → confident claim on the sales page.
+
+Generalise it, and apply to every remaining review: for each claim of the form "X cannot
+happen", identify the code path that would have to execute for X to happen, and confirm
+the test actually reaches it. A negative proven by a case that short-circuits earlier
+proves nothing. This is the same shape as the Foreman finding (guard on the happy path,
+absent on the error path) and the parity-vi finding (no-network proven by grep rather than
+by making sockets raise). Three projects, three instances, one bug class:
+**the safety property was asserted where it was easy to assert, not where it could fail.**
+
+Also confirmed: two unbackable page claims (S2 Amazonbot range file, S3 a block labelled
+"Actual terminal output" that was hand-edited), real nginx/Apache logs rejected two ways
+with 0 of 2 realistic lines parsed (S4), Applebot classified as `human` (S5), a headline
+count wrong at 155 vs an actual 180 (S6), and `refresh --only` disarming the staleness
+guard the page sells (S7).
+
+Clean on the honesty rule otherwise — no UA-alone path to verified, no hardcoded allowlist
+shortcut, no fake logos/testimonials/counts/urgency/scarcity, no fake clone URL, no
+unmeasured competitor, and the 25-of-155 figure correctly labelled a fixture design choice
+everywhere it appears. The page's 418/418 self-verification claim was independently
+reproduced under Node, matching evidence strings character-for-character across a Python
+and a JavaScript implementation.
+
+**Reviewer's verdict, recorded not softened: no-buy as a paid product.** It answers a
+once-asked question and produces no action the user can take. Yes as a free credibility
+artifact. The success-vision agent now running will have something to say about this, and
+the two reads should be compared when it lands.
+
+## Wave 10 started early on ads, scoped to facts only
+
+A fix agent is running on the ads findings. It is explicitly told it is fixing FACTS, not
+DIRECTION, because the vision doc is still being written and may change the product's
+positioning. It may not touch `docs/outcome/`, may not reposition the product, and may not
+add features that change what the tool is for. A second fix pass handles direction once
+the vision lands.
+
+It must also append a dated correction to `mvp-spec.md` — the spec is the origin of S1 and
+has to stop being a source of that bug — and a dated correction to `e2e-test.md` marking
+the insufficiently-tested claim. Append, never rewrite history.
+
+Live now (3/3):
+
+| Agent | Model | Project | Owns | Browser? |
+|---|---|---|---|---|
+| Foreman sales page | Fable | agent-hermes-dashboard | `site/` | YES — 8802 |
+| success vision | Fable | all three + portfolio | `docs/outcome/success-vision.md` ×3 | no |
+| wave 10 fix: ads | Sonnet | ai-ads-injection | `prototype/`, `site/`, `docs/execution/` | no |
