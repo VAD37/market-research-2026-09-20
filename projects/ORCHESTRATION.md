@@ -294,3 +294,48 @@ Queue, in order:
 | 4 | parity-vi sales page | Fable | ai-attack-defense | `site/demo-data.json` already emitted for it |
 | 5-7 | review ×3 | Opus | all | wave 9, vision review, needs e2e + site per project |
 | 8-10 | fix-and-retest ×3 | Sonnet | all | wave 10 |
+
+## Queue update — 2026-09-17, after the ads sales page landed
+
+Commit `fb561df`. First of the three sales pages in.
+
+The thing worth copying to the other two sales-page agents: this agent did not trust its
+own port. The page embeds a JS reimplementation of `verify.py`'s decision table over 637
+prefixes, so it extracted that script under Node with a stubbed DOM and diffed it against
+`aicrawlcheck scan --out csv` across all 420 fixture lines — 418/418 identical, 2 unparsed
+on both sides. A demo that disagrees with the CLI it advertises is worse than no demo.
+
+The honesty rule produced real subtractions, which is the signal it is working:
+no comparison to general log analyzers, no real-world spoof rate (the fixture's 25-of-155
+is labelled `fixture-measured` and "not a real-world rate" at both mentions), no "detects
+undeclared crawlers", no clone URL. The incumbent callout concedes its own size in the
+page's own words.
+
+Deviation logged, raw beating brief: the rDNS line reads 6 of 6 sampled OpenAI addresses,
+not the brief's 3 of 3, because `raw/rdns-lookups.txt` holds GPTBot 3 + OAI-SearchBot 1 +
+OAI-AdsBot 2, all NXDOMAIN. Correct call — the brief was stale, the raw was not.
+
+Browser screenshots were not in that agent's grant and are deferred to the wave 9 vision
+review. The agent named three places to look first: the three-column argument cards near
+960-1120 px, the results table in card mode at 390 px, and the wrapping `.tag` chips.
+Carry those into the ads review prompt.
+
+Live now (3/3):
+
+| Agent | Model | Project | Owns |
+|---|---|---|---|
+| Traefik hosting | Sonnet | infra | `infra/` |
+| aicrawlcheck e2e | Sonnet | ai-ads-injection | `prototype/`, `docs/execution/` |
+| Foreman e2e | Sonnet | agent-hermes-dashboard | `prototype/`, `docs/execution/` |
+
+Queue, in order:
+
+| # | Agent | Model | Project | Note |
+|---|---|---|---|---|
+| 1 | Foreman sales page | Fable | agent-hermes-dashboard | re-queued from the cap stop |
+| 2 | parity-vi e2e | Sonnet | ai-attack-defense | |
+| 3 | parity-vi sales page | Fable | ai-attack-defense | `site/demo-data.json` already emitted for it |
+| 4 | review: ads | Opus | ai-ads-injection | wave 9 — site landed, waits on e2e |
+| 5 | review: hermes | Opus | agent-hermes-dashboard | wave 9 |
+| 6 | review: attack-defense | Opus | ai-attack-defense | wave 9 |
+| 7-9 | fix-and-retest ×3 | Sonnet | all | wave 10 |
