@@ -256,3 +256,41 @@ Cloudflare token gaining **Zone · DNS · Edit**.
 Six concurrent agents contend on one browser, one Docker daemon, and one set of ports,
 and the main thread cannot hold an accurate picture of six moving trees. Three is what
 stays reviewable.
+
+## Queue update — 2026-09-17, after parity-vi build landed
+
+All three builds are now in. Commits: ads `aicrawlcheck` (wave 6), hermes `Foreman`
+`0e262eb`, attack-defense `parity-vi` `db2ae18`.
+
+parity-vi: all pre-registered spec numbers matched exactly after one bug fix. The bug is
+worth carrying forward — Python rounds half-to-even, the spec's numbers use round-half-up,
+and it surfaced only at an exact tie (26/32 = 81.25%). The agent fixed the code and left
+the spec numbers alone, which is the rule working as intended. It also caught the same
+`wc -l` CSV miscount the main thread flagged earlier and corrected `data/README.md` to
+csv-parsed 8,844/1,106/1,106.
+
+Two exit-code lessons now confirmed on two separate projects: check `echo $?` on the
+command itself, never through a pipe. Piping to `head` masks the real code. This is now
+written into every e2e prompt.
+
+Live now (3/3):
+
+| Agent | Model | Project | Owns |
+|---|---|---|---|
+| Traefik hosting | Sonnet | infra | `infra/` |
+| ads sales page | Fable | ai-ads-injection | `site/` |
+| aicrawlcheck e2e | Sonnet | ai-ads-injection | `prototype/`, `docs/execution/` |
+
+Two on ai-ads-injection, allowed under scheduler rule 3: file sets disjoint, both prompts
+name the other as live and name the paths they may not touch.
+
+Queue, in order:
+
+| # | Agent | Model | Project | Note |
+|---|---|---|---|---|
+| 1 | Foreman e2e | Sonnet | agent-hermes-dashboard | re-queued from the cap stop |
+| 2 | Foreman sales page | Fable | agent-hermes-dashboard | re-queued from the cap stop |
+| 3 | parity-vi e2e | Sonnet | ai-attack-defense | build landed, now unblocked |
+| 4 | parity-vi sales page | Fable | ai-attack-defense | `site/demo-data.json` already emitted for it |
+| 5-7 | review ×3 | Opus | all | wave 9, vision review, needs e2e + site per project |
+| 8-10 | fix-and-retest ×3 | Sonnet | all | wave 10 |
