@@ -1,0 +1,147 @@
+# rDNS lookups against 8.8.8.8, run 2026-09-17 (UTC 07:06)
+# command form: nslookup <ip> 8.8.8.8
+
+=== Googlebot-ref — 66.249.66.1 ===
+Server:  dns.google
+Address:  8.8.8.8
+
+Name:    crawl-66-249-66-1.googlebot.com
+Address:  66.249.66.1
+
+
+=== OAI-GPTBot — 132.196.86.1 ===
+*** dns.google can't find 132.196.86.1: Non-existent domain
+Server:  dns.google
+Address:  8.8.8.8
+
+
+=== OAI-GPTBot — 20.171.206.1 ===
+*** dns.google can't find 20.171.206.1: Non-existent domain
+Server:  dns.google
+Address:  8.8.8.8
+
+
+=== OAI-GPTBot — 74.7.175.129 ===
+*** dns.google can't find 74.7.175.129: Non-existent domain
+Server:  dns.google
+Address:  8.8.8.8
+
+
+=== CCBot — 3.41.188.33 ===
+Server:  dns.google
+Address:  8.8.8.8
+
+Name:    3-41-188-33.crawl.commoncrawl.org
+Address:  3.41.188.33
+
+
+=== CCBot — 18.97.9.169 ===
+Server:  dns.google
+Address:  8.8.8.8
+
+Name:    18-97-9-169.crawl.commoncrawl.org
+Address:  18.97.9.169
+
+
+=== OAI-SearchBot — 20.171.207.1 ===
+*** dns.google can't find 20.171.207.1: Non-existent domain
+Server:  dns.google
+Address:  8.8.8.8
+
+
+=== Perplexity-User — 44.208.221.197 ===
+Server:  dns.google
+Address:  8.8.8.8
+
+Name:    ec2-44-208-221-197.compute-1.amazonaws.com
+Address:  44.208.221.197
+
+
+=== Perplexity-User — 18.97.21.1 ===
+Server:  dns.google
+Address:  8.8.8.8
+
+Name:    ec2-18-97-21-1.compute-1.amazonaws.com
+Address:  18.97.21.1
+
+
+=== PerplexityBot — 107.20.236.150 ===
+Server:  dns.google
+Address:  8.8.8.8
+
+Name:    ec2-107-20-236-150.compute-1.amazonaws.com
+Address:  107.20.236.150
+
+
+=== PerplexityBot — 3.224.62.45 ===
+Server:  dns.google
+Address:  8.8.8.8
+
+Name:    ec2-3-224-62-45.compute-1.amazonaws.com
+Address:  3.224.62.45
+
+
+=== PerplexityBot — 18.97.1.229 ===
+Server:  dns.google
+Address:  8.8.8.8
+
+Name:    ec2-18-97-1-229.compute-1.amazonaws.com
+Address:  18.97.1.229
+
+
+=== Anthropic-combined — 216.73.216.1 ===
+*** dns.google can't find 216.73.216.1: Non-existent domain
+Server:  dns.google
+Address:  8.8.8.8
+
+
+=== Anthropic-combined — 34.162.230.222 ===
+Server:  dns.google
+Address:  8.8.8.8
+
+Name:    222.230.162.34.bc.googleusercontent.com
+Address:  34.162.230.222
+
+
+=== Anthropic-combined — 40.124.101.49 ===
+*** dns.google can't find 40.124.101.49: Non-existent domain
+Server:  dns.google
+Address:  8.8.8.8
+
+
+=== Anthropic-combined — 18.225.238.228 ===
+Server:  dns.google
+Address:  8.8.8.8
+
+Name:    ec2-18-225-238-228.us-east-2.compute.amazonaws.com
+Address:  18.225.238.228
+
+
+=== Anthropic-combined — 16.58.26.69 ===
+Server:  dns.google
+Address:  8.8.8.8
+
+Name:    ec2-16-58-26-69.us-east-2.compute.amazonaws.com
+Address:  16.58.26.69
+
+
+=== Anthropic-combined — 136.107.176.208 ===
+Server:  dns.google
+Address:  8.8.8.8
+
+Name:    208.176.107.136.bc.googleusercontent.com
+Address:  136.107.176.208
+
+
+=== OAI-AdsBot — 130.131.229.129 ===
+*** dns.google can't find 130.131.229.129: Non-existent domain
+Server:  dns.google
+Address:  8.8.8.8
+
+
+=== OAI-AdsBot — 20.168.90.129 ===
+*** dns.google can't find 20.168.90.129: Non-existent domain
+Server:  dns.google
+Address:  8.8.8.8
+
+

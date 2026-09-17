@@ -1,0 +1,27 @@
+Local machine / account infrastructure check
+Pull date: 2026-09-17
+Method: Bash (git-bash/mingw64) `find`, `npm ls -g`, `where`, manual directory listing on this Windows machine (D:\researchs\market-research host).
+Purpose: does the prototype phase have a domain, Cloudflare account, or server access already available.
+
+## Commands run and results
+
+`ls -la /d/` -> top-level dirs: ai, audits, hackathon, personal, projects, researchs, study. No `sites/`, `domains/`, `infra/` folder.
+
+`find /d/ai /d/projects /d/researchs -maxdepth 3 -iname "wrangler.toml"` -> no results. No Cloudflare Workers project exists on this machine.
+
+`find /d/ai /d/projects -maxdepth 3 -iname ".env*"` -> hits in unrelated hackathon/CTF/smart-contract projects (paradigm-ctf-*, judge folders, etc.) and two AI projects (`aisb/.env.example`, `growtrics-challenge/.env.example`, `keyloop-challenge/.env`, `selfhost-local/.env.paperclip`). None of these are web-hosting or DNS related by name.
+
+`grep -iE "cloudflare|domain|CF_|DNS|wrangler" /d/ai/keyloop-challenge/.env /d/ai/selfhost-local/.env.paperclip` -> zero matches in either file.
+
+`which wrangler`, `which cloudflared` -> not found (mingw64 PATH).
+`where wrangler`, `where cloudflared`, `where certbot` (cmd.exe PATH) -> "Could not find files for the given pattern(s)" for all three.
+
+`npm ls -g --depth=0` -> global packages are `@anthropic-ai/claude-code`, `claude-code-cache-fix`, `corepack`, `cyberchef-executor`, `cyberchef-server`, `eslint`, `grunt`, `grunt-cli`, `npm`, `prettier`, `yarn`. No `wrangler`, no `vercel`, no `netlify-cli`, no `fastly` CLI.
+
+`find /d/ai /d/projects/hackathon /d/projects/smart-contract -maxdepth 2 -iname "*.toml"` -> only Rust (`Cargo.toml`, `deny.toml`, `rust-toolchain.toml`), Python (`pyproject.toml`) and Foundry (`foundry.toml`) project files. Nothing Cloudflare/edge related.
+
+`/d/ai/aisb` (the AISB security-training repo referenced in MegaPlan §3) has a `.git` remote and course materials (1.0-readings, 1.1-llm-internals, 1.2-logprobs, 1.3-instruction-hierarchies, 1.4-prompt-injection) but no deployed web asset, no domain config.
+
+## Conclusion
+
+No domain, no Cloudflare account artifact, no edge/CDN CLI tool, and no server access is present anywhere found on this machine. The prototype phase starts from zero on infrastructure: it needs (a) a domain name registered for this project, and (b) a fresh Cloudflare (or Fastly/Vercel/Netlify) account added to that domain, before any Worker/edge-rule build can begin. Nothing here contradicts that — this is a negative finding, not proof of absence machine-wide (personal/study/audits dirs and non-D drives were not scanned).
