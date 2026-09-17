@@ -138,3 +138,39 @@ improve it?` — the user's standing requirement.
 | `ai-attack-defense` | Three ungated MIT corpora already on disk. Build on them. No paid endpoint in the demo path; local deterministic baseline, commercial adapter optional | spawned |
 
 Each was sent the measured toolchain mid-run so nothing gets specced that cannot run.
+
+### Wave 5 results — three Opus MVP specs, 2026-09-17
+
+| Project | Product | Spec | Checklist | Commit |
+|---|---|---|---|---|
+| `ai-ads-injection` | `aicrawlcheck` — offline access-log classifier | 706 lines | 31 items | `d23d806` |
+| `ai-attack-defense` | `parity-vi` — VI/EN guardrail parity harness | 821 lines | 35 items | `587c3ff` |
+| `agent-hermes-dashboard` | `foreman` — recurrence-to-tool graduation CLI | 1092 lines | 32 items | `61f08ab` |
+
+Each spec pre-registers an exact deterministic tally as the build's pass condition, and each
+build agent is told in writing: if output disagrees with the spec, fix the code, not the
+number. A spec number may only be overturned by arithmetic recorded in `build-log.md`.
+
+Each spec agent took first-hand measurements rather than accepting a prior pass:
+
+| Project | Measured this wave | Why it mattered |
+|---|---|---|
+| `ai-ads-injection` | 489 IPv4 + 148 IPv6 prefixes across 9 files; RFC 5737 ranges overlap zero of them | Fixture can use documentation IPs as guaranteed-negative traffic |
+| `ai-attack-defense` | SEA-HELM vi/en row-for-row aligned, 0 mismatches / 600 rows; MultiJail parses to 315 rows not 443 lines; ViHOS counts in the data README wrong on all three files | The whole parity design rests on the alignment. `wc -l` lies on these files |
+| `agent-hermes-dashboard` | `~/.claude/history.jsonl` 3000/3000 lines carry exactly `display`/`pastedContents`/`project`/`sessionId`/`timestamp`; `SKILL.md` format observed; no `~/.claude/commands/` exists | Supplies the task text and the `sessionId` join the hook payload lacks. Nothing asserted about slash-command format, which was never observed |
+
+Three honesty positions carried from spec into build, each one refusing a claim the project
+would have liked to make:
+
+- ads: nothing may be claimed about GoAccess/AWStats/Matomo — no pass has checked them. An acceptance item greps for it.
+- attack-defense: promptfoo is named first and conceded to do most of this. PyRIT language coverage and promptfoo run-diff both recorded `unknown` rather than ranked on an unattacked absence.
+- hermes: `/insights` is the nearest free first-party incumbent and its output was never inspected, so only the checkable claim is permitted. Cost fields are excluded rather than estimated.
+
+### Wave 6 — three Sonnet build agents, parallel, 2026-09-17
+
+All three spawned. Each builds to its spec, runs the pre-registered fixture, and must match
+the tally exactly. None may write `site/index.html` — wave 8 owns the sales page.
+
+Hermes build carries the session's strictest safety brief: `assert_not_global()` before every
+write, a SHA-256 of `~/.claude/settings.json` before and after the run, and a ban on copying
+any real string out of `~/.claude/history.jsonl` into the repo.
