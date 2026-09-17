@@ -333,6 +333,26 @@ Keywords listed: `nemo guardrails, azure content filter, aws bedrock guardrails,
 
 The page also carries a provider-normalization table covering AWS ApplyGuardrail, AWS Converse, Azure OpenAI content filters, Google Model Armor, Vertex AI with Model Armor, Anthropic classifier refusals, OpenAI safety surfaces and Mistral Custom Guardrails, plus a caution verbatim: "Missing guardrail metadata currently behaves like `flagged: false`. Inspect at least one real result before using the assertion as a CI gate; a green test with no `guardrails` object proves nothing about enforcement."
 
+### 6d — `site/docs/configuration/guide.md`, test-case loading, verbatim
+
+> ## Loading tests from CSV
+>
+> YAML is nice, but some organizations maintain their LLM tests in spreadsheets for ease of collaboration. promptfoo supports a special [CSV file format](/docs/configuration/test-cases#csv-format).
+>
+> ```yaml
+> prompts:
+>   - file://prompt1.txt
+>   - file://prompt2.txt
+> providers:
+>   - openai:gpt-5-mini
+>   - id: vertex:gemini-3.5-flash
+> tests: file://tests.csv
+> ```
+
+> :::tip
+> Test files can be defined in YAML/JSON, JSONL, [CSV](/docs/configuration/test-cases#csv-format), and TypeScript/JavaScript. Promptfoo also supports external datasets from [Google Sheets](/docs/integrations/google-sheets) and [Azure Blob Storage](/docs/configuration/test-cases#azure-blob-storage).
+> :::
+
 Release status recorded by wave 1 (`shipping-tools-github-pulls.md`): promptfoo 0.123.0, 2026-09-10, MIT, promptfoo acquired by OpenAI 2026-03-09.
 
 ---
@@ -359,3 +379,24 @@ GitHub code search restricted to `path:garak/probes`, 2026-09-17:
 | `"top_k"` | 0 | — |
 
 Note: garak ships `detectors/perspective.py`, i.e. it can call Perspective API as a scoring detector.
+
+---
+
+## PULL 8 — MITRE ATLAS: is there a Navigator
+
+Source: `github.com/mitre-atlas`. Method: `gh api orgs/mitre-atlas/repos`, 2026-09-17. Verbatim rows, name | description | last push | stars:
+
+```
+atlas-data | ATLAS tactics, techniques, and case studies data | pushed 2026-09-15T15:03:16Z | stars 183
+atlas-website | Source and static code for the MITRE ATLAS website | pushed 2026-09-16T04:05:47Z | stars 20
+atlas-navigator | Web app that provides basic navigation and annotation of ATLAS matrices, based on the ATT&CK Navigator | pushed 2024-06-24T21:17:01Z | stars 13
+atlas-navigator-data | Scripts and outputs for ATLAS data in STIX JSON and ATT&CK Navigator layer formats | pushed 2026-06-24T18:21:42Z | stars 34
+almanac | ATLAS version of the Compass plugin supplying CALDERA with visualizations | pushed 2022-03-24T01:34:18Z | stars 7
+arsenal | CALDERA plugin for adversary emulation of AI-enabled systems | pushed 2023-08-07T18:19:16Z | stars 126
+caldera-atlas | (no description) | pushed 2023-06-20T20:52:05Z | stars 20
+ai-risk-database | Explore AI Supply Chain Risk with the AI Risk Database | pushed 2024-05-08T14:51:39Z | stars 76
+atlas-opencti-connector | ATLAS & OpenCTI Connector | pushed 2024-01-04T07:37:44Z | stars 4
+atlas-knowledge-base-agent | The ATLAS Agent helps answer questions about the MITRE ATLAS Framework by leveraging the ATLAS Knowledge Graph. | pushed 2026-08-05T13:42:54Z | stars 66
+```
+
+A repository named `atlas-navigator`, published by MITRE ATLAS itself and described as "based on the ATT&CK Navigator", exists. Its code was last pushed **2024-06-24**; its data feed `atlas-navigator-data`, which emits "ATT&CK Navigator layer formats", was last pushed **2026-06-24**.
