@@ -1,0 +1,27 @@
+### QUERY: repo:anthropics/claude-code "usage limit" in:title
+828
+
+### QUERY: repo:anthropics/claude-code "usage limit" in:title state:open
+101
+
+### QUERY: repo:anthropics/claude-code "usage limit" in:title state:closed
+727
+
+### QUERY: repo:anthropics/claude-code "usage limit" in:title is:issue
+822
+
+### QUERY: repo:anthropics/claude-code "rate limit" in:title
+733
+
+### QUERY: repo:anthropics/claude-code "weekly limit" in:title
+234
+
+### QUERY: repo:anthropics/claude-code "budget" in:title
+153
+
+### QUERY: repo:anthropics/claude-code "cost" in:title
+355
+
+### QUERY: repo:anthropics/claude-code in:title
+93582
+
