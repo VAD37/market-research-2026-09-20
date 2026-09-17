@@ -393,3 +393,61 @@ Queue, in order:
 
 ai-ads-injection is the first project with all four MVP deliverables on disk:
 `prototype/` that runs, `docs/execution/e2e-test.md`, `site/index.html`, `docs/outcome/`.
+
+## Queue update — 2026-09-17, Foreman e2e landed
+
+Commit `8aaac10`. The e2e pass earned its cost on this one.
+
+**Safety bug found by running it, not by reading it.** `hookcmd.py`'s `_log_failure()`
+wrote a diagnostic log to `dirname(--ledger)/foreman-hook.log` on any exception, with no
+`assert_not_global()` call anywhere in the file. If `--ledger` were ever misconfigured to a
+path under `~/.claude`, the ledger write would be correctly blocked and the failure-log
+write would land inside `~/.claude` unguarded. **The guard protected the happy path and not
+the error path.** Reproduced in a sandbox with `expanduser` monkeypatched to scratchpad,
+never the real path. Fixed, re-verified, full e2e re-run from clean.
+
+Generalise this: a safety guard is only as good as its least-exercised branch. Every
+review from here checks the exception handlers, not just the main write path.
+`assert_not_global()` is now confirmed on all 9 write call-sites across 6 write locations.
+`~/.claude/settings.json` SHA-256 unchanged.
+
+Foreman timing: 0.365s from `cd prototype` to the full six-section report.
+
+Voice verdict recorded honestly rather than sold: the mocking tone lands, but narrowly.
+It is safe precisely because the mechanical tests forbid it from attaching a number to the
+mockery — which also makes it toothless by construction. One framing flaw flagged: the
+report says "you typed" about tasks an agent executed. Wave 10 candidate.
+
+## Wave 9 is split in two
+
+The vision half of the review needs Chrome, and Chrome is one shared resource. Rather than
+idle a slot behind it, wave 9 now runs as two agents per project:
+
+- **9a — code/test/honesty review (Opus, no browser).** Re-runs the headline path from
+  clean, audits the decision logic, audits every sales-page claim against the build log and
+  e2e doc, cross-checks every number across all five artifacts, gives a buy/no-buy read.
+  Writes `docs/outcome/review.md` ending in the mandated `## Is this enough?` heading, with
+  a `## Vision review — pending` placeholder naming what the browser pass must look at.
+- **9b — vision review (Opus, browser).** Appends its section. Serialized against every
+  other browser agent.
+
+9a agents are told to RECORD, not repair. A review that quietly fixes what it found leaves
+no record of what was wrong. Wave 10 repairs.
+
+Live now (3/3):
+
+| Agent | Model | Project | Owns | Browser? |
+|---|---|---|---|---|
+| Foreman sales page | Fable | agent-hermes-dashboard | `site/` | YES — 8802 |
+| parity-vi e2e | Sonnet | ai-attack-defense | `prototype/`, `docs/execution/` | no |
+| review 9a: ads | Opus | ai-ads-injection | `docs/outcome/review.md` | no |
+
+Queue, in order:
+
+| # | Agent | Model | Project | Note |
+|---|---|---|---|---|
+| 1 | parity-vi sales page | Fable | ai-attack-defense | browser, 8803 |
+| 2 | review 9a: hermes | Opus | agent-hermes-dashboard | needs `site/` to land first |
+| 3 | review 9a: attack-defense | Opus | ai-attack-defense | needs e2e + site |
+| 4 | review 9b: vision ×3 | Opus | all | browser, strictly serialized |
+| 5 | fix-and-retest ×3 | Sonnet | all | wave 10 |
