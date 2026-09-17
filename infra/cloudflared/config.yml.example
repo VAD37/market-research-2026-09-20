@@ -1,0 +1,24 @@
+# infra/cloudflared/config.yml.example
+#
+# Copy this to infra/cloudflared/config.yml after `cf-tunnel.py create --execute`
+# has written infra/<tunnel-id>-credentials.json. Fill in the tunnel id below
+# (the same one in the credentials filename), then start the connector with:
+#
+#   docker compose -f infra/docker-compose.yml --profile tunnel up -d cloudflared
+#
+# The credentials-file path is inside the container, matching the read-only
+# bind mount `./cloudflared:/etc/cloudflared:ro` in docker-compose.yml — so
+# the actual <tunnel-id>-credentials.json file must live in infra/cloudflared/
+# too (copy or symlink it there; it is gitignored either way).
+
+tunnel: <tunnel-id-from-create>
+credentials-file: /etc/cloudflared/<tunnel-id-from-create>-credentials.json
+
+ingress:
+  - hostname: dev1.vad37.com
+    service: http://traefik:80
+  - hostname: dev2.vad37.com
+    service: http://traefik:80
+  - hostname: dev3.vad37.com
+    service: http://traefik:80
+  - service: http_status:404

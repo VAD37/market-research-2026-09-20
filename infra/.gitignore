@@ -1,0 +1,23 @@
+# infra/.gitignore -- never track credentials or generated secrets.
+# The repo-root .gitignore already ignores .env; this covers everything
+# cf-tunnel.py writes or that a live tunnel needs at runtime.
+
+# Tunnel credentials written by `cf-tunnel.py create`.
+*-credentials.json
+
+# Local run state tracking what `create` made (has record/tunnel ids).
+.cf-tunnel-state.json
+
+# Real cloudflared runtime config (contains the tunnel id + credentials path).
+# The .example template stays tracked.
+cloudflared/config.yml
+cloudflared/*.json
+
+# Catch-all for any other generated secret material.
+*.pem
+*.key
+*secret*
+
+# Python bytecode cache from running cf-tunnel.py.
+__pycache__/
+*.pyc

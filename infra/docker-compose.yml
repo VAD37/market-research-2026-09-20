@@ -17,6 +17,15 @@
 # 127.0.0.1 automatically. curl can hit the real-hostname rule directly with
 # `-H "Host: dev1.vad37.com"` since Traefik matches on the Host header, not on
 # actual DNS resolution.
+#
+# Routing engine, measured 2026-09-17: Traefik's Docker provider (the labels
+# below) could not talk to this machine's Docker daemon — see the long
+# comment at the top of infra/traefik/dynamic.yml for the full diagnosis
+# (isolated to a Traefik-vs-new-engine incompatibility, not a config error;
+# reproduced on both traefik:v3.1 and traefik:v3.4). The file provider
+# (infra/traefik/dynamic.yml, mounted below) carries the actual routing
+# today. Labels stay so the intended label-based setup is documented and
+# ready for whenever the Docker provider works again.
 
 networks:
   edge:
@@ -32,6 +41,8 @@ services:
       - "--providers.docker.endpoint=unix:///var/run/docker.sock"
       - "--providers.docker.exposedbydefault=false"
       - "--providers.docker.network=infra-edge"
+      - "--providers.file.filename=/etc/traefik/dynamic.yml"
+      - "--providers.file.watch=true"
       - "--entrypoints.web.address=:80"
       - "--api.dashboard=true"
       - "--api.insecure=true"
@@ -52,6 +63,9 @@ services:
     volumes:
       # Read-only Docker socket mount — Traefik only needs to observe labels.
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      # File-provider dynamic config — see dynamic.yml for why this carries
+      # the actual routing today.
+      - "./traefik/dynamic.yml:/etc/traefik/dynamic.yml:ro"
     networks:
       - edge
     labels:

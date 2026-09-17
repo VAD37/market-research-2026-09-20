@@ -1,0 +1,65 @@
+# infra/traefik/dynamic.yml
+#
+# Static/file-provider routing — the WORKING default on this machine.
+#
+# Why this file exists: Traefik's Docker provider (label-based discovery) is
+# also configured in docker-compose.yml and is the intended long-term
+# mechanism (see labels on site-dev1/2/3). But on this machine it failed
+# every request with the daemon with an opaque error:
+#
+#   "Failed to retrieve information of the docker client and server host"
+#   error="Error response from daemon: "
+#
+# measured 2026-09-17 against Docker Desktop 29.6.2 (engine reports
+# "Module":"github.com/moby/moby/v2", i.e. the new v2 engine module) with
+# BOTH Traefik v3.1.7 and v3.4 — same failure on both, with the socket
+# mounted read-only AND read-write, with DOCKER_API_VERSION pinned to 1.44
+# AND unset, and with the docker.provider.endpoint set explicitly. The
+# daemon itself is healthy: `docker info`/`curl --unix-socket .../info` and
+# the official `docker:cli` image all succeed against the exact same socket
+# mount in the exact same compose network. This isolates the break to
+# Traefik's vendored Docker API client version against this specific new
+# engine build — a Traefik/engine compatibility bug, not a config error here.
+#
+# So: this file provider is the routing path that is actually live today.
+# The Docker labels stay on the site services and the Docker provider stays
+# enabled in docker-compose.yml (harmless besides retry-error log lines) so
+# that when Traefik ships a fix, or this stack runs against an older/other
+# engine, flipping to label-based discovery needs zero changes beyond
+# removing this file provider block.
+#
+# Backend addresses use the services' Compose network alias (site-dev1,
+# site-dev2, site-dev3 on the infra-edge network) — no Docker socket access
+# needed for routing at all.
+
+http:
+  routers:
+    dev1:
+      rule: "Host(`dev1.vad37.com`) || Host(`dev1.localhost`)"
+      entryPoints:
+        - web
+      service: dev1
+    dev2:
+      rule: "Host(`dev2.vad37.com`) || Host(`dev2.localhost`)"
+      entryPoints:
+        - web
+      service: dev2
+    dev3:
+      rule: "Host(`dev3.vad37.com`) || Host(`dev3.localhost`)"
+      entryPoints:
+        - web
+      service: dev3
+
+  services:
+    dev1:
+      loadBalancer:
+        servers:
+          - url: "http://site-dev1:80"
+    dev2:
+      loadBalancer:
+        servers:
+          - url: "http://site-dev2:80"
+    dev3:
+      loadBalancer:
+        servers:
+          - url: "http://site-dev3:80"

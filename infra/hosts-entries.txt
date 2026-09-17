@@ -1,0 +1,17 @@
+# Lines to add to C:\Windows\System32\drivers\etc\hosts for local testing of
+# dev1/dev2/dev3 without public DNS. This file is NOT applied automatically --
+# editing the hosts file is a system change and a user decision. Add these
+# lines yourself (as Administrator) if you want to browse
+# http://dev1.vad37.com/ directly instead of using the dev1.localhost
+# fallback or a curl -H "Host: ..." override.
+#
+# Note: the .localhost fallback host rules baked into
+# infra/traefik/dynamic.yml (dev1.localhost, dev2.localhost, dev3.localhost)
+# need NO hosts-file edit at all -- modern Windows/macOS/Linux resolve
+# *.localhost to 127.0.0.1 out of the box. These entries are only useful if
+# you specifically want the real vad37.com hostnames to resolve locally
+# before/without the Cloudflare Tunnel being live.
+
+127.0.0.1 dev1.vad37.com
+127.0.0.1 dev2.vad37.com
+127.0.0.1 dev3.vad37.com
