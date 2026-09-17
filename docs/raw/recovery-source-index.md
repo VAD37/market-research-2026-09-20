@@ -1,0 +1,54 @@
+# Recovery pulls — source index
+
+Companion index to `recovery-pulls.md`. Pulled 2026-09-16, channel `browser` unless noted. Format: source | URL | type | what it gave | date fetched.
+
+| Source | URL | Type | What it gave | Date fetched |
+|---|---|---|---|---|
+| old.reddit.com r/SaaS search | https://old.reddit.com/r/SaaS/search?q=first+customer&restrict_sr=1&sort=new | forum, mixed founder-stated | Confirmed Reddit fully renders via browser (curl block was network-policy/UA-layer only); baseline "first customers" thread sample | 2026-09-16 |
+| r/SaaS — "Spent a year building a SaaS nobody cared about... $7K MRR" | (same subreddit search) | founder-stated | Channel-not-product outbound-automation story, $7,038.62 MRR | 2026-09-16 |
+| r/SaaS — "We rebuilt our onboarding 50+ times... $0-$4M ARR" (Supademo) | (same) | founder-stated / company-stated | Activation-metric numbers ($4M ARR, >25% EBITDA, 200k+ users, conversion multipliers) | 2026-09-16 |
+| r/SaaS — "I finally got my first paying customer after 8 months" | (same) | founder-stated | $70 first sale via direct relationship-building, 472 pts/382 comments | 2026-09-16 |
+| r/SaaS — "I just got my first paying customer" | (same) | founder-stated | $9 first sale, 1,142 pts/323 comments (demand-proxy score) | 2026-09-16 |
+| r/SaaS — "Co-founder left after 14 months... 40% equity" | (same) | founder-stated | First 8 customers via cofounder-run sales calls; two-founder-split cautionary tale | 2026-09-16 |
+| r/SaaS — "4 paying users in one day" (AskMeety) | (same) | founder-stated | Reddit/forum validation → PH launch channel, 702 pts/312 comments | 2026-09-16 |
+| r/SaaS — Outgrow/VenturePact calculator story | (same) | secondhand (poster retelling, not founder's own words) | Free-tool-as-channel case, named founders Randy Rayess + Pratham | 2026-09-16 |
+| r/Entrepreneur — SaaS tool-sprawl complaint | https://old.reddit.com/r/Entrepreneur/search?q=first+paying+customer&restrict_sr=1&sort=top&t=year | founder-stated | $4,100/mo on 23 subscriptions demand-proxy complaint, 631 pts/545 comments | 2026-09-16 |
+| r/SaaS — "I'm pivoting my SaaS after realizing Reddit lead gen tools... are all lying to you" | https://old.reddit.com/r/SaaS/search?q=wish+there+was+AI&restrict_sr=1&sort=top&t=year | founder-stated (builder, not buyer) | AI-outreach-tool real-vs-marketed performance gap, 4-client/90-day self-test | 2026-09-16 |
+| r/indiehackers — "$0-$1 took 7 months. $1-$100k took 12 months" | https://old.reddit.com/r/indiehackers/search?q=first+customer&restrict_sr=1&sort=top&t=year | founder-stated | Timeline-with-numbers, $20 first sale to $100k in 12 months | 2026-09-16 |
+| r/indiehackers — "How I got my 5 first users" (PostClaw) | (same) | founder-stated | Headline A/B + demo-video conversion numbers | 2026-09-16 |
+| r/indiehackers — "I emailed 130 people... 0 said yes" (PostClaw follow-up) | (same) | founder-stated | Cold-email-to-partners 0% conversion vs. affiliate-channel success | 2026-09-16 |
+| r/SaaS — "I put $100 into Reddit ads... 0 conversions" | https://old.reddit.com/r/SaaS/search?q=first+10+customers&restrict_sr=1&sort=top | founder-stated | Paid-ads failure vs. organic-community-post success (26 free users from one IH post) | 2026-09-16 |
+| r/stripe — "Is Stripe quietly blocking non-US LLC founders?" | https://old.reddit.com/r/SaaS/search?q=Stripe+Atlas+non-US+founder&sort=relevance&t=all | founder-stated, dated 2026-06-16 update | Stripe account-representative US-physical-presence requirement confirmed by @stripesupport | 2026-09-16 |
+| r/SaaS — "Bootstrapped, non US founder, first real customer... LLC vs Delaware C-Corp" | (same) | founder-stated | Non-US-founder entity-choice confusion, first paying customer ready | 2026-09-16 |
+| r/llc_life — "Stripe Atlas alternatives for foreign founders" | (same) | founder-stated | Pakistan-based team, 4-week Stripe Atlas review delay | 2026-09-16 |
+| r/Form5472_us — "Stripe Atlas didn't warn me about this IRS form" | (same) | founder-stated | Form 5472 $25k penalty risk for non-US-owned single-member LLC | 2026-09-16 |
+| r/startups — "Non-US founders residential address problem with Brex, Mercury" | (same) | founder-stated | Bank KYC address requirement blocking non-US founders post-incorporation | 2026-09-16 |
+| Stripe Atlas team AMA post (r/StripeTeam) | (same) | company-stated (Stripe employee) | Official onboarding steps, $500 fee, "2-4 weeks" EIN timeline for non-US founders | 2026-09-16 |
+| blog.asmartbear.com — "Startup Genome Project Considered Harmful" | https://blog.asmartbear.com/startup-genome-project/ | trade-press essay + primary-researcher rebuttal (Ron Berman, Startup Genome co-founder) | n=650 sample size, survivorship-bias and pattern-seeking-fallacy critique, Startup Genome's own admission sample "too small" for cross-validation | 2026-09-16 |
+| startupgenome.com (original 2011 article) | https://startupgenome.com/article/discover-the-patterns-of-successful-internet-startups | vendor-published, dead link | 301-redirects to current corporate homepage; original report no longer live | 2026-09-16 |
+| web.archive.org (Wayback Machine) | https://web.archive.org/web/2015/http://startupgenomereport.com/report | archive, not found | "The Wayback Machine has not archived that URL" | 2026-09-16 |
+| Google/Bing search — Wasserman "Founder's Dilemmas" team-size | (search queries, no single URL) | search-engine snippet survey | Confirms only third-party summaries exist online; no direct primary quote on team-size-vs-outcome located; book itself paywalled | 2026-09-16 |
+| docs.aws.amazon.com — "Getting started as an AWS Marketplace seller" | https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html | vendor-published, primary | Full eligible-jurisdiction list for paid products — Vietnam NOT included | 2026-09-16 |
+| docs.aws.amazon.com — Listings fees page | (guessed URLs, not resolved) | vendor-published, not reached | Listing-fee percentage not recovered this pass | 2026-09-16 |
+| shopify.dev — "Revenue share for Shopify App Store developers" | https://shopify.dev/docs/apps/launch/distribution/revenue-share | vendor-published, primary | Exact revenue-share table: 0% under $1M lifetime, 15% above; 2.9% processing fee; $19 registration fee; $20M/$100M large-developer carve-out | 2026-09-16 |
+| help.shopify.com — "Getting paid" (Partner Program) | https://help.shopify.com/en/partners/partner-program/getting-paid | vendor-published, primary | Payout mechanics (Hyperwallet, $25 threshold, twice-monthly); no explicit country list | 2026-09-16 |
+| support.upwork.com / upwork.com (guessed URLs) | multiple, all 404 | vendor site, not reached | Genuine 404s, not domain blocks; Upwork's own country-eligibility statement not recovered | 2026-09-16 |
+| sinhmmo.com + YouTube (Vietnamese-language guides) | (via Bing SERP snippet only, not directly fetched) | community/trade guide, secondary | Corroborates routine Vietnamese Upwork-via-Payoneer withdrawal practice | 2026-09-16 |
+| thezulumethod.com | https://www.thezulumethod.com | content-marketing / agency site | Confirms CAC-benchmark post is agency-marketing content with no disclosed methodology | 2026-09-16 |
+| firstpagesage.com — B2B CAC-by-industry report | https://firstpagesage.com/reports/average-customer-acquisition-cost-cac-by-industry-b2b-edition-fc/ | marketing consultancy, primary (unconfirmed) | Page loaded but body did not extract; numbers/methodology not confirmed | 2026-09-16 |
+| data-mania.com (guessed URL) | https://www.data-mania.com/blog/b2b-tech-startup-cac-benchmarks/ | not reached | 404 | 2026-09-16 |
+| satellyte.ai — Cold Email Reply Rate Benchmark tool | https://satellyte.ai/tools/reply-rate-benchmark | secondary aggregator citing primary vendor reports by name | Instantly 2026 (3.43% platform-wide, billions of emails), Belkins 2025 (16.5M emails, 93 industries), Expandi H1 2025 (70,130+ campaigns), Belkins LinkedIn 2025 personalization study — all with absolute numbers and stated samples | 2026-09-16 |
+| instantly.ai (guessed blog URLs) | multiple, all 404 | vendor site, not reached | Genuine 404s; primary Instantly report page itself not directly fetched | 2026-09-16 |
+| dataconomy.com — "Why Google paid $2.7 billion to reclaim its lost AI genius" | https://dataconomy.com/2024/09/26/why-google-paid-2-7-billion-to-reclaim-its-lost-ai-genius/ | trade-press, citing WSJ | Confirms $2.7B figure sourced to WSJ reporting, dated 2024-09-26; full body not extracted, only SERP snippet read | 2026-09-16 |
+| techfundingnews.com — "Clay hits $7.1B valuation with $115M raise" | (via Bing SERP snippet only, not directly fetched) | trade-press | Names Nicolae Rusan (co-founder) and Varun Anand (third co-founder, joined 2021) | 2026-09-16 |
+| egyptinnovate.com — "Founded by Egyptian Entrepreneur, U.S. AI Company Clay Raises..." | (via Bing SERP snippet only) | trade-press | Corroborates Kareem Amin's background (prior co-founded Frame) | 2026-09-16 |
+| digitalfrontier.com — "A recipe for everyday AI" | (via Bing SERP snippet only) | trade-press interview | Names Sam Stephenson as Granola's second co-founder, quotes Chris Pedregal directly | 2026-09-16 |
+| buildr.news — "Two high schoolers built an app that counts calories from a photo" | (via Bing SERP snippet only) | trade-press | Names Henry Langmack as Cal AI's second co-founder alongside Zach Yadegari | 2026-09-16 |
+| LinkedIn — Henry Langmack profile | (via Bing SERP snippet only) | primary (self-stated) | Current headline "Cofounder @ Soar" — flags possible exit from Cal AI, unconfirmed | 2026-09-16 |
+| Bing SERP — Gamma founders search | https://www.bing.com/search?q=Gamma+app+AI+presentation+startup+founders+names+Grant+Lee+co-founder | search survey | Only Grant Lee named as co-founder anywhere; second co-founder not identified | 2026-09-16 |
+
+## Caveats
+
+- Every row sourced through a Bing/Google SERP snippet rather than a directly-loaded article page is marked as such above ("via Bing SERP snippet only, not directly fetched") — the underlying article was not opened this session even though its text (headline + first ~2 sentences) was read verbatim off the search results page. These are trade-press-reported facts as relayed by the search engine's own indexed snippet, not independently confirmed against the full source article.
+- This session's page-text extraction tool showed a recurring one-call lag (returning the previous page's content on the first read after a navigation) and, separately, several pages whose real body did not extract even after retries (firstpagesage.com, dataconomy.com, the AWS "Listings fees" subpage) — flagged inline in `recovery-pulls.md` per block, not silently smoothed over.
+- No login, no cookie acceptance beyond default, no form submission, and no irreversible action was performed at any point in this session.

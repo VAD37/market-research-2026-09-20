@@ -1,0 +1,45 @@
+# Source index — first ten customers, channel not product
+
+Pulled 2026-09-16. Companion to `first-customers-pulls.md`. Format: source | URL | type | what it gave | date fetched.
+
+| Source | URL | Type | What it gave | Date fetched |
+|---|---|---|---|---|
+| Reddit r/SaaS search API | https://www.reddit.com/r/SaaS/search.json?q=first+10+customers | attempted (blocked) | Nothing — network-policy block, all UAs tried | 2026-09-16 |
+| Reddit old.reddit search API | https://old.reddit.com/r/SaaS/search.json?q=first+customers | attempted (blocked) | Nothing — network-policy block | 2026-09-16 |
+| Reddit api.reddit.com | https://api.reddit.com/r/SaaS/search?q=first+10+customers | attempted (blocked) | Nothing — network-policy block | 2026-09-16 |
+| Kapwing company blog | https://www.kapwing.com/blog/how-we-got-our-first-10-customers/ | founder-stated | Cold email failed (~2% response, 0 conversions, "hundreds" contacted); SEO/backlink content strategy got 15 paying customers in 3 weeks; named side-projects (Firemap, Blade Runner poster generator) as link bait | 2026-09-16 |
+| HN Algolia — item 9826773 ("Ask HN: How do I land my first small-business client?") | https://news.ycombinator.com/item?id=9826773 | founder/practitioner-stated (forum) | Full comment thread on security/usability consulting client acquisition; dsacco's $10k/week app-sec consultant account (referral networking, no blog/ads); davismwfl SMB-consulting framing; brudgers "pretend work vs real work"; onion2k cold-calling advice | 2026-09-16 |
+| HN Algolia — item 47075915 ("Ask HN: Why is 'Verified' B2B data becoming a deliverability trap?") | https://news.ycombinator.com/item?id=47075915 | founder-stated (forum), anecdotal | 2026-native discussion of cold-email deliverability collapse: catch-all silent drops, ISP reputation-based filtering, "near-zero opens" on a "clean" 0%-bounce list; PaulHoule's offline/social "fox-photographer" alternative channel; xenadu02 "do things that don't scale" | 2026-09-16 |
+| Woodpecker blog — Cold Email Benchmarks | https://www.woodpecker.co/blog/cold-email-benchmarks/ | vendor-reported (own customer data) | Sample size: 26,000+ campaigns (11 to 1,000+ prospects each), updated 2025-01-21. Relative benchmarks only: personalization ~2x reply rate, ~10% higher open rate; 2-3 follow-ups optimal; 84% of campaigns personalized. No absolute reply/open % disclosed in retrieved text | 2026-09-16 |
+| HN Algolia — item 7436321 ("Ask HN: Consultants, what problem are you solving for companies?") | https://news.ycombinator.com/item?id=7436321 | practitioner-stated | Positioning/pricing framing only (weekly rates, patio11/Sebastian Marshall reference); no acquisition-channel numbers | 2026-09-16 |
+| Indie Hackers (URL guessed, likely resolved to live community content, not a fixed post) | https://www.indiehackers.com/post/how-i-got-my-first-10-customers | founder-stated, LOW CONFIDENCE provenance | Scattered numbers: "3 sales to 12," "$300/mo to $17k/mo in a month" (tied to relocation, not a channel); not independently re-verifiable this session | 2026-09-16 |
+| HN Algolia — item 29624502 ("Failed for the past 12 years as a tech entrepreneur") | https://news.ycombinator.com/item?id=29624502 | founder-stated | Three named channel failures from one serial founder: blogging/content (2 yrs, flat traffic, $0), Facebook paid social (3 months, 2 sales total), unplanned organic launch (0 feedback) | 2026-09-16 |
+| HN Algolia search (video pointer, not fetched) | https://www.youtube.com/watch?v=TRwAO0Td_qA | unverified | Title only: "Email Bulk Sender Requirements (Google/Yahoo/Microsoft)" — video content not retrievable this session | 2026-09-16 |
+| AWS Marketplace seller docs | https://docs.aws.amazon.com/marketplace/latest/userguide/seller-registration-process.html | attempted (failed) | Page rendered empty/JS-only via fetch — no fee data retrieved | 2026-09-16 |
+| AWS Marketplace pricing page | https://aws.amazon.com/marketplace/pricing | attempted (failed) | HTTP 404 | 2026-09-16 |
+| Microsoft Learn — Marketplace listing types | https://learn.microsoft.com/en-us/partner-center/marketplace-offers/determine-your-listing-type | vendor-published documentation (primary) | Confirmed: Professional-service offers support "Contact Me" + Private Offers; private-offer requests routed to a "Marketplace leads" / referrals workspace; doc last updated 2026-09-04. No transaction-fee percentage found on this page | 2026-09-16 |
+| Shopify Partners blog (guessed URL) | https://www.shopify.com/partners/blog/shopify-app-store-revenue-share | attempted (failed) | HTTP 404 | 2026-09-16 |
+| First Page Sage — CAC by industry (3 URL variants guessed) | https://www.firstpagesage.com/seo-blog/customer-acquisition-cost-by-industry/ ; https://firstpagesage.com/seo-blog/customer-acquisition-cost/ ; https://firstpagesage.com/reports/customer-acquisition-cost-cac-by-industry/ | attempted (failed) | All three HTTP 404 — could not locate live CAC benchmark page | 2026-09-16 |
+| Databox — CAC benchmark (guessed URL) | https://www.databox.com/customer-acquisition-cost-benchmark | attempted (failed) | HTTP 404 | 2026-09-16 |
+| Troy Hunt personal site | https://www.troyhunt.com/ | founder-published (site, not a specific post) | No quantitative data found on research→consulting/speaking pipeline; bio only ("often run[s] private workshops," Microsoft Regional Director/MVP) | 2026-09-16 |
+| HN Algolia search — "Toptal Upwork high end consultant earnings" | https://hn.algolia.com/api/v1/search?query=Toptal+Upwork+high+end+consultant+earnings | search, zero results | Nothing — 0 hits | 2026-09-16 |
+| HN Algolia search — "Toptal earnings freelance consultant" | https://hn.algolia.com/api/v1/search?query=Toptal+earnings+freelance+consultant | search, zero results | Nothing — 0 hits | 2026-09-16 |
+| HN Algolia search — "cold email benchmark reply rate 2026" | https://hn.algolia.com/api/v1/search_by_date?query=cold+email+benchmark+reply+rate+2026 | search, zero results | Nothing — 0 hits | 2026-09-16 |
+| HN Algolia search — "customer acquisition cost B2B SaaS benchmark" | https://hn.algolia.com/api/v1/search?query=customer+acquisition+cost+B2B+SaaS+benchmark | search, zero results | Nothing — 0 hits | 2026-09-16 |
+| HN Algolia search — "Shopify app store revenue solo developer" | https://hn.algolia.com/api/v1/search?query=Shopify+app+store+revenue+solo+developer | search, zero results | Nothing — 0 hits | 2026-09-16 |
+| HN Algolia search — "security research lead generation consulting" | https://hn.algolia.com/api/v1/search?query=security+research+lead+generation+consulting | search, zero results | Nothing — 0 hits | 2026-09-16 |
+| HN Algolia search — "AWS marketplace listing got zero sales" | https://hn.algolia.com/api/v1/search?query=our+AWS+marketplace+listing+got+zero+sales | search, zero results | Nothing — 0 hits | 2026-09-16 |
+| HN Algolia search — "spent months on content marketing zero customers" | https://hn.algolia.com/api/v1/search?query=spent+months+on+content+marketing+zero+customers | search, zero results | Nothing — 0 hits | 2026-09-16 |
+| HN Algolia — story 6504451 (Dan Shipper, "How to get your first 10 customers") | http://danshipper.com/nothing-happens-until-the-sale-is-made | founder-published essay | Prescriptive advice (direct outreach, personal conversations over ads/forums) but no quantitative results for his own company (Firefly) disclosed in the retrieved text | 2026-09-16 |
+| Stripe Atlas guide | https://stripe.com/atlas/guides/starting-sales | vendor-published guide | Qualitative tactics (existing network first, referrals, industry research, cold email+call combo); price-tier examples (sub-¥50,000/mo low-touch vs ¥500,000+/yr high-touch, in a JP-localized version of the guide); no conversion-rate or time-to-close numbers | 2026-09-16 |
+
+## Coverage gaps (explicit)
+
+- Reddit (r/SaaS, r/Entrepreneur, r/smallbusiness): fully blocked, zero content retrieved.
+- Indie Hackers: no fixed, independently-verifiable interview URL reached; one low-confidence WebFetch result logged but flagged, not relied on.
+- CAC benchmark figures (small B2B software, small services firm): not found — all four guessed source URLs 404'd.
+- AWS Marketplace / Azure Marketplace fee percentages: not found (AWS: JS-rendered page + 404; Azure: page found but fee % not on it).
+- Shopify App Store, HubSpot App Marketplace, Salesforce AppExchange, OpenAI apps/agent directory: none reached this session (Shopify guessed URL 404'd; the other three were not attempted due to time/budget — flagging as not-attempted rather than not-found).
+- Toptal/Upwork disclosed high-end freelancer earnings: not found (zero HN hits on two query variants; no other source attempted).
+- "Publishing research generates inbound for a security consultant, with numbers": not found. Troy Hunt's own site gave no numbers. No other named security researcher's monetization account was located this session.
+- Google/Yahoo bulk-sender rule specifics (2024-02-01) were not re-confirmed against a live 2026 source — see Block 8 caveat in the pulls file.

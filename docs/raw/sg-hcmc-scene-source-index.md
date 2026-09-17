@@ -1,0 +1,51 @@
+# SG/HCMC Scene Source Index
+
+Companion index to `sg-hcmc-scene-pulls.md`. All rows fetched 2026-09-16 unless noted.
+
+| Source | URL | Type | What it gave | Date fetched |
+|---|---|---|---|---|
+| eonsr.com | https://eonsr.com/en/vietnams-ai-startup-scene-a-rapidly-growing-hub-in-southeast-asia/ | analyst-derived (secondary aggregator, no methodology disclosed) | Vietnam AI ecosystem aggregate stats: $130M AI funding 2025, 765+ AI/ML startups, 23 AI deals | 2026-09-16 |
+| VnEconomy | https://vneconomy.vn/startup-ai-cua-viet-nam-goi-von-thanh-cong-10-trieu-usd.htm | trade-press | AI Hay Series A: $10M, Argor Capital lead, $18M total, 15M+ downloads, 100M Q&A/month | 2026-09-16 |
+| Báo Thanh Niên | https://thanhnien.vn (article on AI Hay, exact path not captured) | trade-press | Corroborates AI Hay $10M Series A figure (snippet only) | 2026-09-16 |
+| bbw.vn | https://bbw.vn (article on AI Hay, exact path not captured) | trade-press | Corroborates AI Hay $10M/$18M-total figures (snippet only) | 2026-09-16 |
+| VnExpress | https://vnexpress.net (AI Hay article; direct fetch 404'd, snippet only) | trade-press | AI Hay downloads/query-volume figures (snippet only) | 2026-09-16 |
+| Y Combinator company directory | https://www.ycombinator.com/companies?query=Vietnam | company-stated (primary, YC's own directory) | 10 companies matching "Vietnam" keyword; HCMC-HQ'd: Infina, Anfin, Reforged Labs, Homebase; Hanoi: Nano Technologies, GIMO | 2026-09-16 |
+| Antler | https://www.antler.co/location/vietnam | company-stated (VC's own site) | Vietnam portfolio: Dizim, Mole, ChatCut, Sinhke, Buyo, Vucar, RenewGo | 2026-09-16 |
+| ThinkZone Ventures | https://thinkzone.vn/portfolio | company-stated (VC's own site) | Portfolio companies/founders, fund history, N2TP/Fundiin portfolio updates (Aug/Jul 2026) | 2026-09-16 |
+| Do Ventures | https://doventures.vc/en/portfolio | company-stated / founder-stated (VC's own site) | Founder quotes: VUIHOC (Lam Do & Thu Do), Metub (Phuong Ha), Bizzi (Vince Vu) | 2026-09-16 |
+| Filum AI | https://filum.ai | company-stated | HCMC AI customer-platform startup: Nextrans/VinVentures backed, Google/Microsoft for Startups, HCMC HQ + Singapore office | 2026-09-16 |
+| Bizzi.vn / Do Ventures | https://bizzi.vn ; https://doventures.vc/en/portfolio/ai/bizzi (both via search snippet aggregation) | company-stated / trade-press | Bizzi $3M Pre-Series A (2021), Money Forward lead + Do Ventures + Qualgro; current product/clients from direct bizzi.vn fetch | 2026-09-16 |
+| secondtalent.com | https://www.secondtalent.com/resources/vietnam-ai-companies | analyst-derived (recruiting content site) | Table of 10 Vietnamese AI companies incl. bootstrapped SnapEdit/SilverAI (founder Nam Le) and Filum AI $1M seed (2025) | 2026-09-16 |
+| ACRA | https://www.acra.gov.sg/register/business/requirements-eligibility/ | government-published (primary) | Foreigner rules: must engage CSP, local-residency requirement, EntrePass/LOC work-pass options | 2026-09-16 |
+| ACRA (fee schedule, via search-summary + astutecorp-s.com corroboration) | https://www.acra.gov.sg/manage/companies/service-transaction-fees | government-published (primary, corroborated) | Incorporation fee: S$15 name application + S$300 registration = S$315 total | 2026-09-16 |
+| rafflescorporateservices.com (via search aggregation) | https://rafflescorporateservices.com | analyst-derived (CSP marketing, restates Companies Act 1967 s.145) | Resident director legal detail: natural person only, EP+LOC route, "ordinarily resident" test | 2026-09-16 |
+| MOM (Ministry of Manpower) | https://www.mom.gov.sg/passes-and-permits/entrepass/eligibility | government-published (primary) | EntrePass eligibility: 30% equity hold, 6 qualifying pathways (SGD 100K raised, accelerator, sold co., IP, research, other) | 2026-09-16 |
+| Startup SG (Enterprise Singapore initiative) | https://www.startupsg.gov.sg/programmes/4894/startup-sg-founder and .../eligibility | government-published (primary) | Startup SG Founder: SC/PR-only applicants, 51% SC/PR ownership requirement, S$20K co-matching grant mechanics | 2026-09-16 |
+| expatmemo.com | https://expatmemo.com/nominee-director-singapore | analyst-derived (CSP-industry content) | Nominee director cost SGD 1,200-6,000/yr, CSP Act 2024 rules (eff. 9 Jun 2025), banking red-flag risk | 2026-09-16 |
+| EDB (Singapore Economic Development Board), via search-summary | https://www.edb.gov.sg (Tech.Pass pages) | government-published (primary, corroborated via summary) | Tech.Pass eligibility: S$20,000/month prior salary + 5 yrs senior tech leadership | 2026-09-16 |
+| AI Singapore, via search-summary + voltade.com corroboration | https://aisingapore.org/innovation ; https://voltade.com/sg/grants | government-affiliated (primary-adjacent) | 100 Experiments (100E): co-funding up to S$150,000, qualifier "for Singapore businesses" | 2026-09-16 |
+| Stripe | https://stripe.com/global (rendered https://stripe.com/en-jp/global) | company-stated (primary) | Full list of Stripe-supported countries: Singapore included, Vietnam absent; Stripe Atlas pitch | 2026-09-16 |
+| Wikipedia | https://en.wikipedia.org/wiki/Axie_Infinity | encyclopedic (cites primary trade press inline) | Sky Mavis founding team (Nguyen Thanh Trung + 4 co-founders), Vietnamese-studio categorization, funding timeline | 2026-09-16 |
+| Vietnam Investment Review / The Block / CryptoTimes (via search aggregation) | https://vir.com.vn ; https://www.theblock.co ; https://www.cryptotimes.io | trade-press | Sky Mavis $152M Series B, a16z lead + Accel/Paradigm, ~$3B valuation, Oct 2021 | 2026-09-16 |
+| SGPBusiness.com | https://www.sgpbusiness.com/company/Sky-Mavis-Pte-Ltd | company-registry-referenced (listing snippet only; direct page returned HTTP 403) | Confirms existence of a "Sky-Mavis-Pte-Ltd" Singapore registry entry | 2026-09-16 |
+| baseacross.com | https://baseacross.com/from/vietnam | analyst-derived / vendor-published (formation-service seller) | US LLC from Vietnam mechanics: no tax treaty, Stripe/Mercury access claims, Wyoming LLC cost $251-649 | 2026-09-16 |
+| Stripe | https://stripe.com/atlas | company-stated (primary) | Atlas pricing: $500 setup + $100/yr, $2,500 Stripe credit, 2-business-day formation | 2026-09-16 |
+| Paddle | https://www.paddle.com/pricing | company-stated (primary) | Merchant-of-record pricing: 5% + 50¢/transaction, full tax handling, no country eligibility statement found | 2026-09-16 |
+| AWS Documentation | https://docs.aws.amazon.com/marketplace/latest/userguide/seller-eligibility.html | company-stated (primary) | AWS Marketplace eligible jurisdictions list — Vietnam AND Singapore both absent | 2026-09-16 |
+| IRS | https://www.irs.gov/individuals/international-taxpayers/forms-and-instructions | government-published (attempted, failed) | HTTP 404 — no content retrieved | 2026-09-16 |
+| Rippling | https://www.rippling.com/blog/w-8ben-e | vendor-published (attempted, failed) | HTTP 403 — no content retrieved | 2026-09-16 |
+| aiproposer.com / payoutmap.com (via search aggregation) | https://aiproposer.com ; https://payoutmap.com/country/vietnam | analyst-derived | Upwork payout mechanics from Vietnam: Vietcombank/Techcombank/VPBank, Payoneer SBV-approved | 2026-09-16 |
+| Toptal | https://www.toptal.com/talent/apply | company-stated (primary, inconclusive) | Application page did not disclose geographic eligibility rules in visible text | 2026-09-16 |
+| Multiple search queries re: first-person US-access account | (see pulls file Block 25b for exact query URLs) | search / negative result | No first-person Vietnamese/SEA founder account of selling to US customers found | 2026-09-16 |
+| ITviec | https://itviec.com/report/vietnam-it-salary-and-recruitment-market | vendor-reported (primary survey, ITviec's own) | 2025-2026 salary report: backend/mobile/frontend dev pay by seniority in VND/month | 2026-09-16 |
+| jt1.vn | https://www.jt1.vn/single-post/vietnam-it-salary-guide-2026 (attempted, failed) | vendor-published (attempted, failed) | HTTP 404 — no content retrieved | 2026-09-16 |
+| outsourcetovietnam.org | https://outsourcetovietnam.org/software-dev-cost-it-outsourcing-in-vietnam | analyst-derived / vendor-published | Published hourly rate table by role/seniority, no company names attached | 2026-09-16 |
+| Numbeo | https://www.numbeo.com/cost-of-living/in/Ho-Chi-Minh-City | analyst-derived (crowdsourced index) | HCMC cost-of-living line items: monthly costs excl. rent, 1BR rent city-centre/outside | 2026-09-16 |
+| Vietcetera (via search snippet) | https://vietcetera.com (Propzy shutdown article, exact path not captured) | trade-press | Propzy shutdown confirmation, 700 employees, "emerging giant" framing | 2026-09-16 |
+| VnExpress (via search snippet) | https://vnexpress.net (Propzy loss article, exact path not captured) | trade-press | Propzy: $25M raised mid-2020, immediate difficulty after | 2026-09-16 |
+| ideaproof.io | https://ideaproof.io/failure/propzy-vietnam | analyst-derived (startup-postmortem content) | Propzy failure analysis: $35M total raised, root cause = product ahead of validated demand | 2026-09-16 |
+| unicornburn.com | https://unicornburn.com/autopsy/wefit-healthtech-vietnam | analyst-derived (startup-postmortem content) | WeFit failure analysis: $1.8M raised, bankrupt May 2020, prepaid-credit model fragility | 2026-09-16 |
+| VnExpress International (via search snippet) | https://e.vnexpress.net (WeFit article, exact path not captured) | trade-press | WeFit bankruptcy headline/date confirmation | 2026-09-16 |
+| Tech in Asia (via search snippet) | https://www.techinasia.com (NativeX shutdown article, exact path not captured; techinasia.com blocked WebFetch directly) | trade-press | NativeX shutdown: Dec 2025, cash crunch, $4M raised, Ansible/Blueprint Ventures | 2026-09-16 |
+| BEAMSTART (via search snippet) | https://beamstart.com (NativeX article referenced by search only; direct fetch found homepage, not the article) | trade-press | Corroborates NativeX shutdown narrative (snippet only) | 2026-09-16 |
+| DealStreetAsia | https://www.dealstreetasia.com/stories/vietnam-startup-failures-investors-317772 | trade-press (paywalled, snippet only) | Names JobHopin, Kilo, Propzy, Wefit as a "string of recent failures" (2024-07-19); full detail not retrieved | 2026-09-16 |
