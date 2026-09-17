@@ -594,3 +594,61 @@ Live now (3/3):
 | Foreman sales page | Fable | agent-hermes-dashboard | `site/` | YES — 8802 |
 | success vision | Fable | all three + portfolio | `docs/outcome/success-vision.md` ×3 | no |
 | wave 10 fix: ads | Sonnet | ai-ads-injection | `prototype/`, `site/`, `docs/execution/` | no |
+
+## Wave 8 complete on hermes — Foreman sales page, commit `b8d17c8`
+
+Two of three sales pages in. This one raised the verification bar again: the ads page
+diffed its JS port against the CLI over 420 lines; this one did 421/421 corpus strings,
+1,770/1,770 pairwise Jaccard scores to two decimals, 60/60 fixture token sets, 13/13 tally
+keys, a byte-identical 2,519 B report, and **200/200 random ledgers** — 4,863 records,
+191 graduations, 36 empty — identical on both report text and tally. Python's half-to-even
+rounding was reimplemented explicitly and covered by tie cases, which is the same trap
+parity-vi hit from the other direction.
+
+The page states the `assert_not_global()` bug and its fix rather than hiding it. That is
+the honesty rule producing something better than silence — a security fix disclosed on the
+sales page reads as competence, not weakness.
+
+Still open and correctly disclosed: **nobody has ever watched a live `Stop` event fire the
+installed hook.** The e2e confirms it. Every claim about hook capture rests on synthetic
+payloads and on the 14 keys measured in `docs/explore/telemetry-measured.md`. That is a
+real gap between "it works" and "we have seen it work", and it belongs in the vision doc's
+gap list.
+
+Browser note for wave 9b: the Chrome window would not resize below 1920, so this agent
+measured 390x844 through a same-origin iframe (`scrollWidth` 371 <= 386, no element outside
+a `pre`/table container past the viewport) and reviewed by eye at zoom. Chrome screenshot
+capture timed out on roughly half the calls. **The 9b agent should expect the same and plan
+for it — measurement is the fallback when capture fails, and a timed-out screenshot is not
+evidence of a broken page.**
+
+## Wave 9a on hermes spawned
+
+Its priority task is the fourth instance of the bug class. It is given all three prior
+instances explicitly and told to hunt for the next one: for every "X cannot happen" claim,
+name the code path that must execute for X to happen and confirm a test reaches it. It
+re-audits `assert_not_global()` across exception handlers, `finally` blocks, atexit and
+signal paths, and anywhere a path is derived from user input, symlinks, `..` segments or
+env vars.
+
+It is also told to judge whether the recurrence layer is real or theatre — 60 records ->
+41 shapes -> 1 graduated could be genuine clustering or a fixture built so exactly one
+thing graduates. The brief's own trap says the dashboard is the worthless half and the
+record/recurrence layer is the claim, so that section decides whether this product has a
+claim at all.
+
+It reads `success-vision.md` if the Fable agent lands it mid-run, and gives an independent
+buy/no-buy read either way. Two independent reads on the same product is worth having —
+the ads reviewer said no-buy-as-paid, yes-as-credibility-artifact, and it will be worth
+seeing whether the vision agent argues the same from the opposite direction.
+
+Live now (3/3):
+
+| Agent | Model | Project | Owns | Browser? |
+|---|---|---|---|---|
+| success vision | Fable | all three + portfolio | `docs/outcome/success-vision.md` ×3 | no |
+| wave 10 fix: ads | Sonnet | ai-ads-injection | `prototype/`, `site/`, `docs/execution/` | no |
+| review 9a: hermes | Opus | agent-hermes-dashboard | `docs/outcome/review.md` | no |
+
+Chrome is free. It is deliberately being held free for the 9b vision passes rather than
+spent on a fourth concurrent agent, since the cap is 3 and browser work cannot overlap.
