@@ -174,3 +174,28 @@ the tally exactly. None may write `site/index.html` — wave 8 owns the sales pa
 Hermes build carries the session's strictest safety brief: `assert_not_global()` before every
 write, a SHA-256 of `~/.claude/settings.json` before and after the run, and a ban on copying
 any real string out of `~/.claude/history.jsonl` into the repo.
+
+## Wave 6 — build — landing log
+
+| Project | Product | Commit | Tally vs spec | Tests | Bugs found by running |
+|---|---|---|---|---|---|
+| ai-ads-injection | `aicrawlcheck` | (wave-6 commit) | matched | offline suite passes | cp1252 stdout; BrokenPipeError on `--out csv \| head` — both fixed |
+| agent-hermes-dashboard | `Foreman` | `0e262eb` | 13-key tally matched first run, no fixture edits | 19/19, incl. both voice tone tests | `hookcmd.main` recorded a null-heavy row for malformed-but-valid JSON — now filters on `hook_event_name in ("Stop","SubagentStop")` |
+| ai-attack-defense | `parity-vi` | running | — | — | — |
+
+Foreman safety check: SHA-256 of `~/.claude/settings.json` byte-identical before and after
+the full e2e run, verified twice. `assert_not_global()` in place. No real ledger content
+copied into the repo.
+
+## Wave 7 / 8 — spawned 2026-09-17
+
+| Project | Wave 7 (Sonnet, e2e) | Wave 8 (Fable, sales page) |
+|---|---|---|
+| ai-ads-injection | running | running |
+| agent-hermes-dashboard | running | running |
+| ai-attack-defense | waits on build | waits on build |
+
+Waves 7 and 8 run concurrently per project — 7 owns `prototype/` and
+`docs/execution/`, 8 owns `site/`. Disjoint file sets, both told the other is live.
+
+Port assignment for local sales-page review: 8801 ads, 8802 hermes, 8803 attack-defense.
