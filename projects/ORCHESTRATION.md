@@ -652,3 +652,61 @@ Live now (3/3):
 
 Chrome is free. It is deliberately being held free for the 9b vision passes rather than
 spent on a fourth concurrent agent, since the cap is 3 and browser work cannot overlap.
+
+---
+
+# WAVE 9V — success vision landed. It changes the plan.
+
+Commits: `b856b7a` ads, `b7037ed` hermes, `379b792` attack-defense, plus
+`projects/SUCCESS-VISION.md` at portfolio level.
+
+The user was right that agents were planning blind. The vision doc's central finding is
+one no spec or acceptance checklist could have produced, and all three e2e docs had
+independently written down half of it without anyone connecting them:
+
+> **All three products' single moment has never happened on real input.**
+> aicrawlcheck has never run on a real log. Foreman's recurrence has never seen a real
+> ledger. parity-vi has never been pointed at a real guardrail — both its demo runs use a
+> synthetic adapter whose regression the spec itself seeded.
+
+Every page currently leads with the fixture demo. The vision doc names that as the
+fake-demo trap in all three files: **the demo that wows and means nothing.** The pages are
+more finished than the products.
+
+## Ranked recommendation — remaining effort
+
+| Share | Project | Why |
+|---|---|---|
+| **70%** | **parity-vi** | The only one with a named, reachable buyer in the team's own city (AI Hay, Vbee, Filum AI), the channel the research rated strongest (1-on-1 proximity), a claim that survived review, a services shape that works at n=1, and a zero-spend path to its own moment — local Qwen3Guard-Gen-0.6B in a `uv` venv, permitted by the mandate. The only honest win that includes money. |
+| 20% | Foreman | Buyer broke in review; what it carries is the user's creative intent. Publish and let the pre-registered 14-day gate decide (>=100 stars AND >=3 unprompted paid asks). |
+| 10% | aicrawlcheck | One real log, a repo, a post, stop. Check GoAccess/AWStats/Matomo first — one hour, never done. If one already verifies UA claims against ranges, a PR is the whole product. |
+
+No fourth product. The three share no buyer but share a DNA: offline checkers that turn
+someone else's claim into evidence, with the source on every row. That is an auditor's
+competence — the honest fourth thing is the measurement *service* all three tools are
+instruments of, which confirms `cross-read.md` pattern 3 from the build side.
+
+## New wave 10 rule — real input before polish
+
+First task per project, ahead of any cosmetic fix: **one real log / one real ledger via
+history mode / one real guardrail via a local adapter.** Then the page leads with a real
+`n=1` number and the fixture demo is demoted to "how it works".
+
+Two small high-value CLI items the vision surfaced, both confirmed absent today:
+- Foreman `scan --from-history` over `~/.claude/history.jsonl` — every field recurrence
+  needs is already there, 3,103/3,103 parsed in the e2e. Moves the "oh" moment from a
+  fortnight out to the first run. Confirmed no such subcommand in `foreman/__main__.py`.
+- parity-vi `report --show-misses` — the e2e found the visceral half of the moment
+  currently requires opening `bundle.json` by hand.
+
+## Honesty lines a "fix" will be tempted to loosen — hold them
+
+No digit in a Foreman voice template. No `keyword` gap charted. One sentence only on
+Law 134/2025/QH15. 25-of-155 never quoted as a rate. No "the only tool". No vendor host in
+the parity-vi repo.
+
+Caveats the vision doc carries and that must survive into any page: every win-condition
+scenario is labelled fiction, **no buyer has been contacted by any pass**, and `/insights`,
+GoAccess/AWStats/Matomo and the Qwen3Guard route are all `unknown — not checked/tried`.
+No wave 9 review had landed when the vision was written, so the ads review's no-buy verdict
+and this document's 10% allocation for ads were reached independently and agree.
