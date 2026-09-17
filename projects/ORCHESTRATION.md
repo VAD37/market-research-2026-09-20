@@ -339,3 +339,57 @@ Queue, in order:
 | 5 | review: hermes | Opus | agent-hermes-dashboard | wave 9 |
 | 6 | review: attack-defense | Opus | ai-attack-defense | wave 9 |
 | 7-9 | fix-and-retest ×3 | Sonnet | all | wave 10 |
+
+## Queue update — 2026-09-17, infra + ads e2e landed
+
+Commits: infra `f2573f0` (root repo), ads e2e `4373c3a`.
+
+**Secret caught in review, worth generalising.** `cf-tunnel.py` masked every credential it
+sends to the last 4 characters, correctly. But `infra/README.md` pasted the raw
+`/user/tokens/verify` RESPONSE body, which carries the API token's own `id` field — and
+our masking never sees Cloudflare's output. Redacted before the commit. A token id is not
+the token secret and cannot authenticate, but it is a durable credential identifier and
+falls under the same rule.
+
+Standing rule, now in `infra/README.md`: **mask the values you send AND the values that
+come back. The response body is the half that gets forgotten.** Apply this to every agent
+that pastes live API output into a repo.
+
+**Traefik finding.** The Docker provider cannot reach this machine's Docker daemon —
+reproduced on v3.1 and v3.4, isolated to a Traefik-client vs new-engine (moby/moby v2)
+incompatibility, not a config error. `docker info`, a raw socket curl and the official
+`docker:cli` image all work against the same socket. Worked around with a file provider
+carrying identical host rules against network aliases. All three sites return HTTP 200
+locally today with zero Docker-socket dependency. Labels stay configured for the upstream fix.
+
+`create --execute` was deliberately NOT run. Creating a real Cloudflare resource is the
+user's call. Still gated on **Zone · DNS · Edit** regardless.
+
+**Ads e2e: 24/31 pass, 0 new bugs.** Items 20-28 are browser tests against
+`site/index.html` and are marked NOT COVERED rather than passed, because `site/` was a
+concurrent agent's scope. That is the correct call and the wave 9 review inherits them.
+
+Browser contention is now a real scheduling constraint: Chrome is one shared resource.
+Do not run two browser-driving agents at once. A Fable sales-page agent and an Opus
+vision review must not overlap. Prefer a non-browser agent when a browser agent is live.
+
+Live now (3/3):
+
+| Agent | Model | Project | Owns | Browser? |
+|---|---|---|---|---|
+| Foreman e2e | Sonnet | agent-hermes-dashboard | `prototype/`, `docs/execution/` | no |
+| Foreman sales page | Fable | agent-hermes-dashboard | `site/` | YES — port 8802 |
+| parity-vi e2e | Sonnet | ai-attack-defense | `prototype/`, `docs/execution/` | no |
+
+Queue, in order:
+
+| # | Agent | Model | Project | Note |
+|---|---|---|---|---|
+| 1 | parity-vi sales page | Fable | ai-attack-defense | browser, port 8803 |
+| 2 | review: ads | Opus | ai-ads-injection | wave 9 — UNBLOCKED, prototype + e2e + site all landed. Inherits acceptance items 20-28. Look first at the three-column cards near 960-1120 px, the results table in card mode at 390 px, the wrapping `.tag` chips |
+| 3 | review: hermes | Opus | agent-hermes-dashboard | wave 9 |
+| 4 | review: attack-defense | Opus | ai-attack-defense | wave 9 |
+| 5-7 | fix-and-retest ×3 | Sonnet | all | wave 10 |
+
+ai-ads-injection is the first project with all four MVP deliverables on disk:
+`prototype/` that runs, `docs/execution/e2e-test.md`, `site/index.html`, `docs/outcome/`.
