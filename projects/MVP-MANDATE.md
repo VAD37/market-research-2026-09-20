@@ -118,3 +118,31 @@ interactive, whether anything overflows or collides at mobile width.
   Stdlib first. `uv` venv install is allowed and free if genuinely needed, but the default
   demo path must run on bare stdlib with zero install.
 - Node **v23.11.1**, Docker **29.6.2**.
+
+## Hosting — user grant 2026-09-17
+
+Public hosting is authorized. Each project's `site/index.html` gets a subdomain of
+`vad37.com`, served from this machine through a Cloudflare Tunnel into a local Traefik
+reverse proxy. Infrastructure lives in `infra/` at the repo root and is owned by the
+infra agent and the main thread — project agents do not touch it.
+
+| Host | Project |
+|---|---|
+| `dev1.vad37.com` | `ai-ads-injection` |
+| `dev2.vad37.com` | `agent-hermes-dashboard` |
+| `dev3.vad37.com` | `ai-attack-defense` |
+
+**Only these three subdomains.** The allowlist is enforced in code, not by convention.
+
+Credentials live in `.env` at the repo root, which is gitignored and must stay that way.
+Verified working 2026-09-17: token active, zone `vad37.com` active, account tunnel access
+confirmed. **`Zone → DNS → Edit` is missing from the token** — DNS record listing returns
+error 10000, so subdomain creation is gated until the user adds that permission.
+`cloudflared` 2026.9.1 is installed and on PATH.
+
+This account already runs three tunnels — `dev-vad`, `mcp`, `phongkham-bsXuan` — that
+belong to the user's other work, one of them a live clinic system. **Nothing may touch
+them.** Create our own tunnel; act only on what we created.
+
+Never print a token, account id, zone id or tunnel secret — not in logs, not in errors,
+not in a dry-run. Mask to the last 4 characters.
