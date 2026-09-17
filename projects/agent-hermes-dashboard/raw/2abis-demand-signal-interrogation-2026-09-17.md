@@ -184,7 +184,9 @@ Star001-KR/claude-session-budget                  8 stars     1 fork    pushed 2
 
 ## 10. Wave 1e's file
 
-`docs/explore/telemetry-measured.md` — **absent** as of `2026-09-17T07:58:15Z`. `docs/explore/` contains six files: `claude-code-substrate.md`, `control-planes.md`, `gap-pulls.md`, `hermes-substrate.md`, `smallbiz-blind-spots.md`, `task-telemetry.md`.
+`docs/explore/telemetry-measured.md` — **absent** as of `2026-09-17T07:58:15Z`. `docs/explore/` contained six files at that moment: `claude-code-substrate.md`, `control-planes.md`, `gap-pulls.md`, `hermes-substrate.md`, `smallbiz-blind-spots.md`, `task-telemetry.md`.
+
+**Addendum, same day, later.** The file landed while this wave was writing its deliverable and was read as measured fact. Result, from `../docs/explore/telemetry-measured.md`: `Stop` and `SubagentStop` carry no `cost` field and no `duration_ms` field, measured on Claude Code v2.1.259 under interactive OAuth across 4 `claude -p` runs including one real subagent spawn. The §10 "absent" observation above is left as recorded, with its timestamp, rather than rewritten.
 
 ## Caveats on this pull
 
@@ -194,4 +196,3 @@ Star001-KR/claude-session-budget                  8 stars     1 fork    pushed 2
 - §5's five-group taxonomy is this agent's grouping. Issue titles are verbatim; the groups are inference and should be labelled as such downstream.
 - No issue body was fetched by this agent. Titles, labels, states, comment counts and reaction counts only. 2b's relayed body quotes are not re-verified here.
 - Reaction and comment counts measure GitHub, on the days people looked. Per `../../../docs/findings/market-gaps-2026.md:93`, engagement counts are visibility proxies, not demand measurements.
-</content>
