@@ -1,0 +1,222 @@
+SOURCE: Bing Webmaster Blog - 'bingbot Series: JavaScript, Dynamic Rendering, and Cloaking. Oh My!' - PRIMARY SOURCE, dated October 31, 2018, authored by Fabrice Canel and Frederic Dubut, Program Managers, Microsoft Bing
+URL: https://blogs.bing.com/webmaster/october-2018/bingbot-Series-JavaScript,-Dynamic-Rendering,-and-Cloaking-Oh-My
+PULL DATE: 2026-09-17
+METHOD: direct fetch via curl (this Bing blog subdomain is server-rendered and not behind the SPA/JS-shell that blocks the main webmaster guidelines page)
+---
+    bingbot Series: JavaScript, Dynamic Rendering, and Cloaking. Oh My!...
+!function(T,l,y){var S=T.location,k="script",D="instrumentationKey",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,u,p,l;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][b]()]=i[1])}if(!e[C]){var r=e.endpointsuffix,o=r?e.location:null;e[C]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[D]||d[D]||"",u=s[C],p=u?u+"/v2/track":d.endpointUrl,(l=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=p,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.replace(/\./g,"-"),hasFullStack:!1,stack:n+"\nSnippet failed to load ["+a+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+i,parsedStack:[]}],r)),l.push(function(e,t,n,a){var i=v(c,"Message"),r=i.data;r.baseType="MessageData";var o=r.baseData;return o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+n+")").replace(/\"/g,"")+'"',o.properties={endpoint:a},i}(0,0,t,p)),function(e,t){if(JSON){var n=T.fetch;if(n&&!y.useXhr)n(t,{method:N,body:JSON.stringify(e),mode:"cors"});else if(XMLHttpRequest){var a=new XMLHttpRequest;a.open(N,t),a.setRequestHeader("Content-type","application/json"),a.send(JSON.stringify(e))}}}(l,p))}function i(e,t){f||setTimeout(function(){!t&&m.core||a()},500)}var e=function(){var n=l.createElement(k);n.src=h;var e=y[w];return!e&&""!==e||"undefined"==n[w]||(n[w]=e),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},n}();y.ld<0?l.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){l.getElementsByTagName(k)[0].parentNode.appendChild(e)},y.ld||0)}try{m.cookie=l.cookie}catch(p){}function t(e){for(;e.length;)!function(t){m[t]=function(){var e=arguments;g||m.queue.push(function(){m[t].apply(m,e)})}}(e.pop())}var n="track",r="TrackPage",o="TrackEvent";t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+r,"stop"+r,"start"+o,"stop"+o,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),m.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4};var s=(d.extensionConfig||{}).ApplicationInsightsAnalytics||{};if(!0!==d[I]&&!0!==s[I]){var c="onerror";t(["_"+c]);var u=T[c];T[c]=function(e,t,n,a,i){var r=u&&u(e,t,n,a,i);return!0!==r&&m["_"+c]({message:e,url:t,lineNumber:n,columnNumber:a,error:i}),r},d.autoExceptionInstrumented=!0}return m}(y.cfg);function a(){y.onInit&&y.onInit(n)}(T[t]=n).queue&&0===n.queue.length?(n.queue.push(a),n.trackPageView({})):a()}(window,document,{
+src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js", // The SDK URL Source
+crossOrigin: "anonymous", 
+cfg: { // Application Insights Configuration
+    connectionString: 'InstrumentationKey=9ac20686-f88e-405d-9ec6-be7f5cd0899b;IngestionEndpoint=https://eastus-5.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/;ApplicationId=8b668ed1-9cd9-48e1-b891-226f4966d60b'
+}});
+        Skip to content
+                function onConsentChanged(categoryPreferences) {
+                    console.log("onConsentChanged", categoryPreferences);
+                }
+                window.WcpConsent && WcpConsent.init("en-US", "cookie-banner", function (err, _siteConsent) {
+                    if (!err) {
+                        siteConsent = _siteConsent;  //siteConsent is used to get the current consent
+                        if (!siteConsent.isConsentRequired) {
+                            $('.manage-cookies').hide();
+                        } else {
+                        }
+                    } else {
+                        console.log("Error initializing WcpConsent: " + err);
+                    }
+                }, onConsentChanged, WcpConsent.themes.light);
+                Menu
+                        This is a place devoted to giving you deeper insight into the news, trends, people and technology behind Bing.
+                                Search for
+    Blogs
+            Home
+                    Search
+                    Maps
+                    Webmaster
+                    Search Quality Insights
+                    Jobs
+                    Engineering Blog
+    Regions
+                    Australia
+                    Canada
+                    China
+                    France
+                    Germany
+                    India
+                    Japan
+                    UK
+                            Follow us:
+                                Subscribe RSS
+                            October312018
+                    bingbot Series: JavaScript, Dynamic Rendering, and Cloaking. Oh My!
+                    Last week, we posted the second blog of our bingbot Series: Optimizing Crawl Frequency.
+Today is Halloween and like every day, our crawler (also known as a "spider") is wandering outside, browsing the world wide web, following links, seeking to efficiently discover, index and refresh the best web content for our Bing users.
+Occasionally, bingbot encounters websites relying on JavaScript to render their content. Some of these sites link to many JavaScript files that need to be downloaded from the web server. In this setup, instead of making only one HTTP request per page, bingbot has to do several requests. Some some sites are spider traps, with dozens of HTTP calls required to render each page! Yikes. That's not optimal, now is it? 
+As we shared last week at SMX East, bingbot is generally able to render JavaScript. However, bingbot does not necessarily support all the same JavaScript frameworks that are supported in the latest version of your favorite modern browser. Like other search engine crawlers, it is difficult for bingbot to process JavaScript at scale on every page of every website, while minimizing the number of HTTP requests at the same time. 
+Therefore, in order to increase the predictability of crawling and indexing by Bing, we recommend dynamic rendering as a great alternative for websites relying heavily on JavaScript. Dynamic rendering is about detecting user agent and rendering content differently for humans and search engine crawlers. We encourage detecting our bingbot user agent, prerendering the content on the server side and outputting static HTML for such sites, helping us minimize the number of HTTP requests and ensure we get the best and most complete version of your web pages every time bingbot visits your site.
+Is using JavaScript for Dynamic Rendering considered Cloaking?
+When it comes to rendering content specifically for search engine crawlers, we inevitably get asked whether this is considered cloaking... and there is nothing scarier for the SEO community than getting penalized for cloaking, even during Halloween! The good news is that as long as you make a good faith effort to return the same content to all visitors, with the only difference being the content is rendered on the server for bots and on the client for real users, this is acceptable and not considered cloaking.
+So if your site relies a lot of JavaScript and you want to improve your crawling and indexing on Bing, look into dynamic rendering: you will certainly benefit immensely, receiving only treats and no tricks!
+🎃 Happy Halloween! 👻
+Fabrice Canel and Frédéric Dubut
+Program Managers
+Microsoft Bing
+            Back toTop
+            Links for Bing
+                Explore Bing
+                Bing AI Tips
+                Bing Rewards
+                Bing Help
+                Bing Ads
+            Other Microsoft links
+                Official Microsoft Blog
+                About Microsoft
+                Microsoft AI
+                Microsoft News
+                Diversity and Inclusion
+            Other product blogs
+                Bing Ads Blog
+                Skype Blog
+                Windows Blog
+                M365 Blog
+                Xbox Wire
+            Powered by Azure
+            Legal
+            Trademarks
+            Privacy Statement
+            Consumer Health Privacy
+            Manage Cookies
+        © 2026 Microsoft Corporation. All Rights Reserved.
+        const currentUrl = window.location.href;
+        const currentUrlWithoutQuerystring = currentUrl.split('?')[0];
+        const currentUrlPath = currentUrlWithoutQuerystring.replace(/^https?:\/\//, '').replace(/\/$/, '').split('/');
+        let baseUrl = '';
+        let subUrl = ''
+        if (currentUrlPath.length > 1 && currentUrlPath[1] == '404') {
+            subUrl = '/home/search';
+        }
+        else if (currentUrlPath.length > 1) {
+            subUrl = '/' + currentUrlPath[1] + '/search';
+        }
+        else {
+            subUrl = '/home/search';
+        }
+        let searchBaseUrl = baseUrl + subUrl;
+        $(document).ready(function () {
+            // There could be multiple forms
+            $(".search-form").each(function (index, element) {
+                let form$ = $(element);
+                // Function to perform search
+                function performSearch(e) {
+                    e.preventDefault();
+                    let searchInput = form$.find(".search-field").val();
+                    let searchUrl = searchBaseUrl + "?searchtext=" + encodeURIComponent(searchInput);
+                    window.location.href = searchUrl;
+                }
+                // Handle search button click
+                form$.find(".search-submit").on("click", performSearch);
+                // Handle Enter key press on search field
+                form$.find(".search-field").on("keypress", function (e) {
+                    if (e.which === 13) { // Enter key
+                        performSearch(e);
+                    }
+                });
+            });
+        });
+        var consent = siteConsent.getConsent();
+        if (consent.SocialMedia) {
+            loadSocial(addTabIndex);
+        }
+        function loadSocial(callback) { 
+            document.write("");
+            callback();
+        }
+        function addTabIndex() {
+            setTimeout(function () {
+                var buttons = document.getElementsByClassName('st-btn');
+                for (const btn of buttons) {
+                    btn.setAttribute('tabindex', '0');
+                    btn.setAttribute('role', 'button');
+                }
+                document.querySelectorAll(".st-btn").forEach(btn => {
+                    btn.addEventListener("keydown", (e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            btn.click(); // simulate mouse click
+                        }
+                    });
+                });
+            }, 1500);
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            const makeGIFInteractive = (el) => {
+                el.setAttribute("tabindex", "0");
+                el.setAttribute("role", "button");
+                el.setAttribute("data-gif-enhanced", "true");
+                // Default state: playing
+                el.dataset.state = "playing";
+                el.setAttribute("data-state", "playing");
+                el.setAttribute("aria-pressed", "true");
+                el.setAttribute("aria-label", "Pause GIF animation");
+                const pauseGIF = (img) => {
+                    const placeholder = document.createElement("div");
+                    placeholder.style.width = img.width + "px";
+                    placeholder.style.height = img.height + "px";
+                    placeholder.style.background = "#ccc center/cover no-repeat";
+                    placeholder.innerText = "GIF animation paused";
+                    placeholder.setAttribute("tabindex", "0");
+                    placeholder.setAttribute("role", "button");
+                    placeholder.setAttribute("class", "image-placeholder");
+                    // ARIA for paused state
+                    placeholder.dataset.state = "paused";
+                    placeholder.setAttribute("aria-pressed", "false");
+                    placeholder.setAttribute("aria-label", "Resume GIF animation");
+                    placeholder.addEventListener("click", () => resumeGIF(img, placeholder));
+                    placeholder.addEventListener("keydown", (e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            resumeGIF(img, placeholder);
+                        }
+                    });
+                    img.replaceWith(placeholder);
+                    placeholder.focus();
+                };
+                const resumeGIF = (oldImg, placeholder) => {
+                    const newImg = oldImg.cloneNode(true); // reload to restart animation
+                    placeholder.replaceWith(newImg);
+                    makeGIFInteractive(newImg); // re-enhance the fresh element
+                    newImg.focus();
+                };
+                const toggle = (e) => {
+                    console.log('toggle');
+                    if (el.dataset.state === "playing") {
+                        el.dataset.state = "paused";
+                        pauseGIF(el);
+                    }
+                    // no explicit else — resume handled by placeholder
+                };
+                el.addEventListener("click", toggle);
+                el.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        toggle();
+                    }
+                });
+            };
+            document
+                .querySelectorAll("img[src*='.gif']")
+                .forEach(makeGIFInteractive);
+        });
+        var consent = siteConsent.getConsent();
+        if (consent.Analytics) {
+            var varSegmentation = 0;
+            var varClickTracking = 1;
+            var varCustomerTracking = 1;
+            var varAutoFirePV = 1;
+            var Route = "50456";
+            var Ctrl = "";
+            document.write("");
+        }
+window.kentico = window.kentico || {};
+window.kentico.builder = {}; 
+window.kentico.builder.useJQuery = true;
