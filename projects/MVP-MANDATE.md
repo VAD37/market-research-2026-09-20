@@ -76,26 +76,39 @@ a ranked list of concrete improvements — each with the effort it costs and wha
 change for the user. No filler entries. If the answer is "not enough", say so plainly and
 say what the single most valuable next build is.
 
-## Vision-review tooling — measured 2026-09-17
+## Vision-review tooling — re-measured 2026-09-17, both paths live
 
-The Chrome extension (`mcp__claude-in-chrome__*`) is STILL NOT CONNECTED. Main thread tested
-it: "Browser extension is not connected." Do not burn attempts on it.
+**The Chrome extension is CONNECTED now.** The user enabled it mid-run. Main thread
+verified: tab group created, navigation succeeded, screenshot returned a real rendered
+page. Prefer it for judging the sales page — it is real Chrome with real font rendering.
 
-**Use the Playwright MCP instead. It works — tested end to end on 2026-09-17.**
+    mcp__claude-in-chrome__tabs_context_mcp  { createIfEmpty: true }   call this FIRST
+    mcp__claude-in-chrome__navigate          { tabId, url }
+    mcp__claude-in-chrome__resize_window     { tabId, width, height }
+    mcp__claude-in-chrome__computer          { tabId, action:"screenshot" }
+    mcp__claude-in-chrome__computer          { tabId, action:"scroll", coordinate, scroll_direction }
+    mcp__claude-in-chrome__read_page         { tabId }
+    mcp__claude-in-chrome__tabs_close_mcp    { tabId }   clean up what you opened
 
-    mcp__MCP_DOCKER__browser_navigate      { url }
-    mcp__MCP_DOCKER__browser_resize        { width, height }
-    mcp__MCP_DOCKER__browser_take_screenshot { type:"png", filename, fullPage }
-    mcp__MCP_DOCKER__browser_snapshot      accessibility tree
-    mcp__MCP_DOCKER__browser_close
+Browser is a single shared resource: **only one browser-driving agent runs at a time.**
+The orchestrator serializes them. Do not assume you have it unless your brief says so.
 
-Screenshots come back as viewable images. `file:///D:/researchs/market-research/projects/<p>/site/index.html`
-loads directly — no server needed for a self-contained page. Serve over HTTP only if the
-page needs it: `python -m http.server` from the `site/` folder, or a Docker nginx if you
-prefer; Docker 29.6.2 is installed and the user granted its use.
+Playwright MCP also works and is the fallback, and it handles `file://` without fuss:
 
-Review widths: **1440x900 desktop** and **390x844 mobile**. Screenshot both, `fullPage:true`,
-and judge from the image.
+    mcp__MCP_DOCKER__browser_navigate / browser_resize / browser_take_screenshot / browser_close
+
+**Serve the page over HTTP for review, do not rely on `file://`** — the Chrome extension may
+not have local-file access. From the project's `site/` folder:
+
+    python -m http.server 8801
+
+then review `http://localhost:8801/`. Use a distinct port per project (8801 ads,
+8802 hermes, 8803 attack-defense) so two agents never collide. Kill the server when done.
+
+Review widths: **1440x900 desktop** and **390x844 mobile**. Screenshot both. Scroll the
+whole page — a screenshot of the hero only is not a review. Judge from the image: hierarchy,
+legibility, whether the 30-second read actually lands, whether the demo is obviously
+interactive, whether anything overflows or collides at mobile width.
 
 ## Toolchain — measured 2026-09-17
 
