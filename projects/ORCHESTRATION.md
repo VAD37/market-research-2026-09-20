@@ -863,3 +863,26 @@ outcome read (Opus), publish (main).
 Live now — Sonnet 1/10: code fix 10b (S18 diff subject identity, S11/S14/S15). Opus 1/2:
 adversarial review of the public report. Gated: report edits on that review; one-line page
 update on 10b (refusal wording); final outcome read (Opus) on both; publish (main) last.
+
+## STOP — user, 2026-09-18: "stop all task and agents"
+
+Both live agents stopped. 10b code fix (S18 + S11/S14/S15) was mid-cleanup: work stashed in
+ai-attack-defense as `wave10b-s18-partial-2026-09-18`, not on master. Report adversarial
+review stopped before writing. Nothing published.
+
+## Where parity-vi stands at stop
+
+| Deliverable | State | Commit |
+|---|---|---|
+| Prototype, 43 tests, S1–S3 fixed, local adapter, Wilson bounds, show-misses | on master | `b3083bd` |
+| Real measurement: 5 open-weights guardrails, Granite version diff REGRESSION | on master | `a241740`, `39d4454` |
+| Sales page, data-driven, vision-reviewed, V1–V11 fixed | on master, NOT published | `bd74ad9` |
+| Public report + HCMC opener + 14-day gate | on master, NOT reviewed | `de8f467` |
+| 9a + 9b reviews | on master | `f25f274`, `572a211` |
+| Packaging, CI example, worked configs | on master | `12811f1` |
+| Buyer profiles (8), SEA-HELM scores, endpoint shapes | on master | `cc122e0`, `1b64cbb`, `eda9e85` |
+
+Front of queue when resumed: (1) finish 10b from the stash; (2) adversarial review of the
+report; (3) one-line page update for the S18 refusal wording; (4) final Opus outcome read;
+(5) publish page as artifact, with the mailto and "source on request" placeholders replaced
+by the user.
