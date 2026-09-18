@@ -922,3 +922,18 @@ Chrome), C4 cross-cutting → `raw/c*-pulls-2026-09-18.md`; Opus → `REPORT-PLA
 time-estimate method from this session's measured throughput, difficulty rubric, writer
 brief). Then: reviews per §D (Opus ads + hermes, Fable parity-vi); then `REPORT.md` per the
 plan; then `PORTFOLIO.md` verdict.
+
+## Investment review, stage 3 — 2026-09-18 ~17:50
+
+Pulls landed: C2 `ffe54e0` (13/18; billing withdrawal of 2026-06-15 was paused, never took
+effect; Stop hooks carry no cost fields), C4 `0b7e064` (58 sourced; Polar.sh lists Vietnam
+as payout country; Decree 142/2026 + 46-system high-risk list dated), C3 `e322221` (23 named
+VI-language chat products; Chrome extension never connected, LinkedIn counts unknown; S18
+still open on master), C1 `c649ea2` (no incumbent verifies UA vs IP or imports a log; two
+same-slot repos at 0–1 stars; spoof rate 31% / 5.7% / 17.1% side by side). Report plan
+`8721eaa`: ten sections, time-estimate method off this session's measured throughput
+(agent-runs 14 / 14 / 27, prototype lines 1,640 / 1,618 / 3,921, buyer contacts 0), writer
+brief, reference-class table.
+
+Live now: reviews per FRAMEWORK §D — Foreman (Opus), parity-vi (Fable), aicrawlcheck
+(Opus). Then `REPORT.md` per REPORT-PLAN §7 writer brief, then `PORTFOLIO.md`.
