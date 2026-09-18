@@ -886,3 +886,9 @@ Front of queue when resumed: (1) finish 10b from the stash; (2) adversarial revi
 report; (3) one-line page update for the S18 refusal wording; (4) final Opus outcome read;
 (5) publish page as artifact, with the mailto and "source on request" placeholders replaced
 by the user.
+
+**Main-thread error at the stop.** `git checkout -- .` after a pathspec stash discarded
+uncommitted STATE.md appends from twelve agents (STATE.md had not been committed since
+`a241740`). Partially recovered from transcripts; this file is the authoritative record for
+the span. Rules from now: `git stash push -u`, never `checkout -- .` on a tree with
+append-only logs, and `git add STATE.md` in every landing commit.
