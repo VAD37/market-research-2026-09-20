@@ -937,3 +937,14 @@ brief, reference-class table.
 
 Live now: reviews per FRAMEWORK §D — Foreman (Opus), parity-vi (Fable), aicrawlcheck
 (Opus). Then `REPORT.md` per REPORT-PLAN §7 writer brief, then `PORTFOLIO.md`.
+
+## Reweight — user, 2026-09-18 ~18:20
+
+"listen we care the most about our own docs/ and market research. not finished product
+completion." Relayed to both live reviewers (§D2b research-quality table; gate = research or
+buyer conversation, not build). Foreman reviewer resumed to append the same. Report plan
+addendum written. Two audit lanes added (Sonnet): root `docs/` traceability (40 claims traced
+to `docs/raw/`, 15 re-verified live) and per-project `docs/` traceability (60 claims, 15
+re-verified, in-project contradictions, pipeline completeness). Foreman review landed
+`5b75fd7` (A6 FAIL: agentsview 5,942★ and coding_agent_session_search 1,136★ never opened;
+A10 FAIL from code; A13 structural, no revenue term; gate 11 h / $0 / 2 weeks else stop).

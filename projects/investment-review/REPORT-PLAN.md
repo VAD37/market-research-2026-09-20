@@ -355,3 +355,27 @@ Projects layer: `projects/CLAUDE.md`; `projects/MVP-MANDATE.md`; `projects/SUCCE
 `projects/ai-attack-defense/`: `CLAUDE.md`; `docs/plan/re-pick.md`, `niche-and-solutions.md`; `docs/review/market-check.md`; `docs/outcome/review.md`, `success-vision.md`, `parity-report-2026-09-18.md`, `hcmc-opener-2026-09-18.md`; `docs/customers/hcmc-candidates.md`; `STATE.md`; `prototype/` file, line and test counts; `site/index.html` line count.
 
 Not read, named so the writer knows: `projects/investment-review/raw/` — the stage-2 pulls were still running when this plan was written; the report reads them, this plan could not. Also unread: each project's `docs/design/mvp-spec.md` and `docs/execution/build-log.md`; `ai-attack-defense/docs/execution/sweep-2026-09-18.md`, `real-run-2026-09-18.md`, `fix-log-2026-09-18.md`, `packaging-2026-09-18.md`, `site-log-2026-09-18.md`, `docs/plan/measurement-report.md`; `MegaPlan.md`; `infra/`; any `site/index.html` source.
+
+---
+
+## Addendum 2026-09-18 ~18:20 — reweight by user instruction
+
+User, verbatim: "we care the most about our own docs/ and market research. not finished
+product completion."
+
+Consequences for `REPORT.md`, overriding anything above that conflicts:
+
+1. Sections (b) market understanding, (c) problems and (e) competitors carry the verdict.
+   Section (d) solutions is context: what was measured on real input stays, but tests,
+   packaging, open bugs and "never run on a real log" are one row each, not verdict drivers.
+2. Add section (b2) **Research quality**: per project and for the root `docs/`, the counts
+   from `raw/audit-root-research-2026-09-18.md` and `raw/audit-project-docs-2026-09-18.md`
+   (TRACED / DRIFT / UNTRACED / MEMORY; STILL-TRUE / CHANGED / GONE), the worst finding per
+   file, and the §D2b tables from the three reviews. This section answers "can the founder
+   trust their own research", which is the question the user is asking.
+3. Every gate in (f) and (h) is a research or buyer-conversation gate. A build task may
+   appear only as a prerequisite to a research gate, with its hours shown separately.
+4. Time estimates in (g) price research and conversation work first; build work is a
+   second column.
+5. Sunk-cost check now reads: "would this proposal be attractive if neither the code nor
+   the docs existed, given only the raw/ evidence?"
