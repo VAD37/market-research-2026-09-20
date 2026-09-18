@@ -765,3 +765,31 @@ Added parity-vi lanes (all disjoint from the live real-input agent):
 | measurement-report plan (the published asset) | Opus | `docs/plan/measurement-report.md` | after sweep numbers |
 | 9a review | Opus | `docs/outcome/review.md` | after real-input lands |
 | sales page | Fable | `site/index.html` | after sweep + 9a |
+
+## Stage 1 landed — real guardrail run, commit `a241740` (ai-attack-defense)
+
+First real number this project has ever printed. Qwen3Guard-Gen-0.6B, CUDA, 15m08s for
+600 prompts: EN recall 91.5% [86.4–94.8], VI 87.8% [81.9–92.0], gap 3.7 pp — CIs overlap.
+`hate` (n=32) 27.0 pp, the only n≥5 category with non-overlapping bounds. 96/600 (16%)
+returned `Controversial` → indeterminate. The finding is the OPPOSITE shape from the seeded
+fixture demo (76 pp collapse), and it was reported as-is. Wilson bounds added to every rate,
+pre-registered point estimates unchanged bit-for-bit. `report --show-misses` added.
+Bug found by running: the adapters folder's `keyword.py` shadows stdlib `keyword` when the
+worker is invoked as a bare script — fixed by `-m` invocation with explicit cwd.
+
+Consequence for the thesis: one small multilingual open model does not show a VI collapse.
+The product's claim is about guardrails CHOSEN FOR ENGLISH. Sweep spawned to measure those.
+
+Live now — Sonnet 4/10, Opus 2/2, Fable 0/1:
+
+| Agent | Model | Owns | Resource |
+|---|---|---|---|
+| guardrail sweep: Granite Guardian 3.0 vs 3.3 (real version diff), Detoxify, Qwen3Guard-4B if fits | Sonnet | adapters, runs, `sweep-2026-09-18.md`, `site/sweep.json` | GPU |
+| packaging: pyproject, Actions workflow, worked http_json examples, README sections | Sonnet | `pyproject.toml`, `.github/`, `examples/`, README sections | — |
+| buyer profiles HCMC | Sonnet | `raw/`, `docs/customers/` | — |
+| SEA-HELM leaderboard VI safety scores | Sonnet | `raw/`, `docs/explore/` | Chrome |
+| 9a review of `a241740` | Opus | `docs/outcome/review.md` | — |
+| measurement-report plan | Opus | `docs/plan/measurement-report.md` | — |
+
+Gated: sales page (Fable) on sweep + 9a; report draft (Sonnet) on plan + sweep; 9b vision
+(Opus) on sales page; wave 10 fix (Sonnet) on 9a + vision gap list; publish (main) last.
