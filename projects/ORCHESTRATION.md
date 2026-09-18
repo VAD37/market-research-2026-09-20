@@ -852,3 +852,14 @@ table hides the VI columns — page fix spawned.
 Live now — Sonnet 3/10: page fix V1–V11 + sweep section (Chrome); code fix 10b (S18 subject
 identity, S11/S14/S15); report writer (public measurement + HCMC opener). Then: final
 outcome read (Opus), publish (main).
+
+## Page fixed, report drafted — 2026-09-18
+
+| Lane | Commit | What landed |
+|---|---|---|
+| report | `de8f467` | `docs/outcome/parity-report-2026-09-18.md` — "Same 600 prompts, five guardrails: the Vietnamese gap tracks the vendor's own language claim" + `hcmc-opener-2026-09-18.md` with the 14-day gate |
+| page fix | `bd74ad9` | V1–V11 all fixed with measurements (hate caveat 43%→100% visible at 390 px, promptfoo at char 805, tap target 44 px, law cited once). Sweep section rendered. 573 fields cross-checked, 0 mismatches |
+
+Live now — Sonnet 1/10: code fix 10b (S18 diff subject identity, S11/S14/S15). Opus 1/2:
+adversarial review of the public report. Gated: report edits on that review; one-line page
+update on 10b (refusal wording); final outcome read (Opus) on both; publish (main) last.
