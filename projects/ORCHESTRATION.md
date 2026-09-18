@@ -905,3 +905,20 @@ needs and where they come from, per-project pull list, review template, kill tes
 (2) Sonnet pulls, one per project plus one cross-cutting, into `raw/`. (3) Reviews against
 the framework: Opus for ads and hermes, Fable for parity-vi. (4) `PORTFOLIO.md` synthesis.
 Agents never run git; main thread commits after each landing.
+
+## Investment review, stage 2 — 2026-09-18 ~17:00
+
+First Fable + Sonnet launch died on a session rate limit at ~11:54 (reset 15:00). The
+framework had already been written in full: `FRAMEWORK.md`, 14 criteria (B3 willingness to
+pay, B6 incumbent coverage, B10 real-input proof and B14 kill criteria are KILL), four pull
+lists C1–C4, review template D1–D12, twelve traps F1–F12. Commit `78d3b94`.
+
+User added: "run subagent make a plan on what is a good report on proposal and market
+understanding, problems, solution, competitor, and then what are our open proposal and its
+pro/cons, time estimate and difficulty — then write that report."
+
+Live now, Sonnet 4/10 + Opus 1/2: pulls C1 aicrawlcheck, C2 Foreman, C3 parity-vi (owns
+Chrome), C4 cross-cutting → `raw/c*-pulls-2026-09-18.md`; Opus → `REPORT-PLAN.md` (skeleton,
+time-estimate method from this session's measured throughput, difficulty rubric, writer
+brief). Then: reviews per §D (Opus ads + hermes, Fable parity-vi); then `REPORT.md` per the
+plan; then `PORTFOLIO.md` verdict.
