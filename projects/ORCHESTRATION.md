@@ -748,3 +748,20 @@ Three agents were cut by the previous session end, none crashed:
 | 5 | publish sales page as artifact | main | — | — |
 
 Live now (2/3): real-input (Sonnet), endpoint pulls (Sonnet). Slot 3 held for Chrome check.
+
+## Cap change — user, 2026-09-18
+
+> "I lift restriction on subagents limit. I now allow max 10 sonnet, 2 opus, 1 fable agent run at the same time"
+
+Cap is now per model: 10 Sonnet, 2 Opus, 1 Fable concurrently. Single-project rule stands. Browser and GPU are still single resources — one browser agent at a time, one model-running agent at a time.
+
+Added parity-vi lanes (all disjoint from the live real-input agent):
+
+| Lane | Model | Owns | Gate |
+|---|---|---|---|
+| buyer profiles: AI Hay, Vbee, Filum AI + HCMC LLM shops | Sonnet | `raw/`, `docs/customers/` | now |
+| SEA-HELM leaderboard VI safety scores (JS SPA, Chrome) | Sonnet | `raw/`, `docs/explore/` | now |
+| guardrail sweep: Granite Guardian 3.0 vs 3.3 (real version diff), Detoxify multilingual, Qwen3Guard-4B if it fits | Sonnet | `prototype/harness/adapters/`, `runs/`, `docs/execution/` | after real-input lands (GPU) |
+| measurement-report plan (the published asset) | Opus | `docs/plan/measurement-report.md` | after sweep numbers |
+| 9a review | Opus | `docs/outcome/review.md` | after real-input lands |
+| sales page | Fable | `site/index.html` | after sweep + 9a |
