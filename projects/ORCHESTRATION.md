@@ -963,3 +963,26 @@ on master: Anthropic IP certified as verified Googlebot, fix only in stash); 8 �
 
 Live: Fable writes `REPORT.md` + `PORTFOLIO.md` per REPORT-PLAN §7 + addendum; Sonnet audits
 (root docs/, project docs/) feed section (b2).
+
+## Investment review, landed — 2026-09-18 ~21:40
+
+Report writer died once on the session rate limit (reset 20:20) with nothing on disk;
+resumed and wrote directly. User: "show me the report when done … also i want a market
+report too not just project report."
+
+| File | Commit | Words |
+|---|---|---|
+| `REPORT.md` — 11 sections, three verdicts, 16 proposals, time bands | `fd97dc1` | 7,424 |
+| `PORTFOLIO.md` — one table, ten-line recommendation | `fd97dc1` | — |
+| `MARKET-REPORT.md` — three markets, 14-criterion cross table, changed rows | `1be9e89` | 6,089 |
+| `audit-root-research` 40/40 traced, 13/2/0 · `audit-project-docs` 60 claims, 0 untraced | `1300a95`, `ce490ed` | — |
+
+Verdicts all "gate first": parity-vi 8 h / $0 / 3 wk (HCMC 14-day gate, flip = buyer price
+≥30.4M VND); Foreman 11 h / $0 / 2 wk (read /insights + two repos, then real-ledger count);
+aicrawlcheck 23 h / $11 / 3 wk (20-org probe, flip = one 7.5M VND deposit). Every
+minimum-commitment EV negative on cash at $25/h. Research: 92/100 sampled claims trace to
+raw; supply-complete, demand-empty; zero buyers contacted in any pass. Both writers ran over
+the word caps and disclosed it in-file rather than drop labelled rows.
+
+Page: one artifact, three tabs, markdown rendered verbatim by marked (cdnjs). Published by
+main thread; URL in chat.
