@@ -948,3 +948,18 @@ to `docs/raw/`, 15 re-verified live) and per-project `docs/` traceability (60 cl
 re-verified, in-project contradictions, pipeline completeness). Foreman review landed
 `5b75fd7` (A6 FAIL: agentsview 5,942★ and coding_agent_session_search 1,136★ never opened;
 A10 FAIL from code; A13 structural, no revenue term; gate 11 h / $0 / 2 weeks else stop).
+
+## Investment review, stage 4 — 2026-09-18 ~19:10
+
+Reviews landed. parity-vi `1dd90e3` (Fable): KILL rows UNKNOWN not FAIL; gap thesis — 0 of 5
+models show the sold story, a measurement that confirms the vendor's language claim is not a
+product; instrument real but one subcommand from promptfoo, moat none; services wedge
+UNKNOWN, 0 of 8 contacted; N=23 × 15M VND × 10% = 34.5M VND, ratio to 2× salary 0.026; EV
+negative all rows; gate 8 h / $0 / 3 weeks, flip = one buyer-stated price ≥ 30.4M VND by
+2026-10-10. aicrawlcheck `2ccd91f` (Opus): A3/A6 UNKNOWN, A10 FAIL as context (reproduced
+on master: Anthropic IP certified as verified Googlebot, fix only in stash); 8 × 15M × 10% ×
+3 = 36M VND, ratio 0.014; 20 cold contacts × 3.43% = 0.686 expected replies; gate 23 h / $11
+/ 3 weeks, flip = one 7.5M VND deposit. Foreman `babc91d`: gate 11 h / $0 / 2 weeks.
+
+Live: Fable writes `REPORT.md` + `PORTFOLIO.md` per REPORT-PLAN §7 + addendum; Sonnet audits
+(root docs/, project docs/) feed section (b2).
