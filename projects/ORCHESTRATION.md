@@ -828,3 +828,27 @@ Live now — Sonnet 3/10: sweep (GPU), stale-number corrections (docs after the 
 sales page (resumed briefly to reflect the fix-log). Gated: 9b vision review (Opus, Chrome)
 on the page agent releasing Chrome; report draft (Sonnet) on sweep; S11/S14/S15 patch on
 sweep; publish (main) last.
+
+## Sweep landed — the moment happened on real input. Commit `39d4454`
+
+| Model | Declared langs | EN recall | VI recall | Gap | Indet |
+|---|---|---|---|---|---|
+| Qwen3Guard-Gen-0.6B | "119 languages" | 91.5% | 87.8% | 3.7 pp, CIs overlap | 16.0% |
+| Granite Guardian 3.0-2b | `en` only | 94.0% | 68.5% | **25.5 pp, no overlap** | 0.0% |
+| Granite Guardian 3.1-2b | `en` only | 93.0% | 64.5% | **28.5 pp, no overlap** | 0.0% |
+| Detoxify multilingual | 7 langs, vi absent | 16.5% | 1.5% | label mismatch, near floor | 0.0% |
+| Qwen3Guard-Gen-4B | "119 languages" | 92.1% | 89.6% | 2.5 pp, CIs overlap | 18.3% |
+
+All `measured — this machine — 2026-09-18`. The gap tracks the vendor's declared language
+coverage. `diff` Granite 3.0→3.1: **VERDICT: REGRESSION, exit 1** — net +21 new Vietnamese
+misses, gap widened 25.5→28.5 pp. First real version-to-version Vietnamese regression this
+instrument has printed. New bug S18 found by the sweep: cross-model diff (Granite vs
+Detoxify) NOT refused because both share the adapter name `local_model`. Fix spawned.
+
+Vision review (`572a211`): ten-second test PASS, fake-demo trap PASS on every measured axis
+(banner ink 9.0× fixture glyph ink), publishable with placeholders replaced; V1/V2 mobile
+table hides the VI columns — page fix spawned.
+
+Live now — Sonnet 3/10: page fix V1–V11 + sweep section (Chrome); code fix 10b (S18 subject
+identity, S11/S14/S15); report writer (public measurement + HCMC opener). Then: final
+outcome read (Opus), publish (main).
