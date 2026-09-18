@@ -710,3 +710,41 @@ scenario is labelled fiction, **no buyer has been contacted by any pass**, and `
 GoAccess/AWStats/Matomo and the Qwen3Guard route are all `unknown — not checked/tried`.
 No wave 9 review had landed when the vision was written, so the ads review's no-buy verdict
 and this document's 10% allocation for ads were reached independently and agree.
+
+---
+
+# SESSION 2026-09-18 — single project: parity-vi
+
+User directive: finish ONE project this session, no parallel projects. Cap 3 agents.
+Sonnet execution/explore, Opus plan/review code, Fable docs/vision/hard unsplit tasks.
+Run without feedback; review goals/outcome as normal; vision when needed; Chrome
+extension available (to verify).
+
+Pick: **parity-vi** (`ai-attack-defense`). Reasons: success vision's 70% allocation;
+only project with named reachable buyer (AI Hay, Vbee, Filum AI, HCMC); claim survived
+review; zero-spend path to its own real measurement already set up (venv + Qwen3Guard
+model on disk from the stopped agent).
+
+## Housekeeping at session start
+
+Three agents were cut by the previous session end, none crashed:
+
+| Project | Agent | State found | Action |
+|---|---|---|---|
+| ai-ads-injection | wave 10 fix (Sonnet) | 12 prototype files modified, no STATE entry | stashed `wave10-fix-partial-2026-09-17`, STATE noted, commit `f9f9a98` |
+| agent-hermes-dashboard | 9a review (Opus) | STARTING entry, no review.md | STATE noted, commit `44156ab` |
+| ai-attack-defense | wave 10 real-input (Sonnet) | venv + model downloaded, no code | STATE noted, commit `c5c095f`; resumed below |
+
+## Stage plan — parity-vi to done
+
+| Stage | Agents | Model | Owns | Browser |
+|---|---|---|---|---|
+| 1 | real-input: local_model adapter, real 600-prompt run, `report --show-misses`, Wilson bounds, `site/real-run.json` | Sonnet | `prototype/`, `docs/execution/`, `site/*.json` | no |
+| 1 | endpoint-shape pulls: Azure/OpenAI moderation shapes, Qwen3Guard card, promptfoo diff, PyRIT languages, SEA-HELM status | Sonnet | `raw/`, `docs/explore/` | no |
+| 2 | sales page around the REAL number | Fable | `site/index.html` | yes, 8803 |
+| 2 | 9a code/test/honesty review | Opus | `docs/outcome/review.md` | no |
+| 3 | 9b vision review | Opus | appends review.md | yes |
+| 3→4 | wave 10 fix-and-retest from review + vision gap list | Sonnet | `prototype/`, `site/` | no |
+| 5 | publish sales page as artifact | main | — | — |
+
+Live now (2/3): real-input (Sonnet), endpoint pulls (Sonnet). Slot 3 held for Chrome check.
