@@ -793,3 +793,25 @@ Live now — Sonnet 4/10, Opus 2/2, Fable 0/1:
 
 Gated: sales page (Fable) on sweep + 9a; report draft (Sonnet) on plan + sweep; 9b vision
 (Opus) on sales page; wave 10 fix (Sonnet) on 9a + vision gap list; publish (main) last.
+
+## Stage 2 landings — 2026-09-18 (ai-attack-defense commits)
+
+| Lane | Commit | What landed |
+|---|---|---|
+| buyer profiles | `cc122e0` | 8 companies. TPBank names a ChatGPT/Gemini/Grok router. No safety statement on any page reached |
+| SEA-HELM scores | `1b64cbb` | VI safety top: Gemma 4 31B 72.18. SEA-HELM has NO English safety task — no paired delta exists anywhere. No guardrail product on the board |
+| report plan | `0c6b73c` | Honest title + null-result framing; 14-day pre-registered signal (≥1 buyer-side run AND ≥3 replies = PASS) |
+| packaging | `12811f1` | pyproject, Actions example (green→red on the seeded fixture), Azure/OpenAI http_json examples with placeholders, zero vendor hosts |
+| 9a review | `f25f274` | 17 findings. S1 CRITICAL: the diff gate has no indeterminacy ceiling — turning VI misses into `Controversial` yields exit 0 and 100% recall. S2: report has no run↔bundle hash check. S3: redaction is headers-only. S4: the `hate` 27 pp "non-overlapping CI" handoff was wrong — overlap 10.2 pp, 2 discordant items of 32 |
+
+The S1 finding is the fifth instance of the session's bug class (safety asserted where it
+cannot fail) and the reviewer named the generalisation that found it: write the input that
+makes X happen before writing the test that says it cannot. Reviewer verdict: no-buy as paid
+service; yes as free instrument once S1–S3 land; not yet a published measurement because no
+commercial endpoint has been run (one human account signup away — Azure F0 5,000 records/mo
+free, OpenAI moderation free; the mandate forbids agents creating accounts).
+
+Live now — Sonnet 3/10: sweep (GPU, Granite 3.0 done, 3.1 running), code fix (S1–S3, S6–S8,
+S10–S15; test-first), docs fix (S4, S5, S9, S12, S13, S16, S17 as dated corrections).
+Gated: sales page (Fable) on code fix + docs fix; report draft (Sonnet) on sweep + docs fix;
+9b vision (Opus) on page; publish (main) last.
