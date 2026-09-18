@@ -892,3 +892,16 @@ uncommitted STATE.md appends from twelve agents (STATE.md had not been committed
 `a241740`). Partially recovered from transcripts; this file is the authoritative record for
 the span. Rules from now: `git stash push -u`, never `checkout -- .` on a tree with
 append-only logs, and `git add STATE.md` in every landing commit.
+
+## Investment review — user, 2026-09-18
+
+User: "review each projects and thinking of business. i want real number. analystic. not just
+wishful thinking … see if these project worthwhile to investment in time and money". Verdict
+explicitly asked for, so this pass ends in one.
+
+New folder `projects/investment-review/` (tracked in the root repo, cross-project). Stages:
+(1) Fable writes `FRAMEWORK.md`: investor criteria with thresholds, the exact numbers each
+needs and where they come from, per-project pull list, review template, kill tests.
+(2) Sonnet pulls, one per project plus one cross-cutting, into `raw/`. (3) Reviews against
+the framework: Opus for ads and hermes, Fable for parity-vi. (4) `PORTFOLIO.md` synthesis.
+Agents never run git; main thread commits after each landing.
