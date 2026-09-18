@@ -815,3 +815,16 @@ Live now — Sonnet 3/10: sweep (GPU, Granite 3.0 done, 3.1 running), code fix (
 S10–S15; test-first), docs fix (S4, S5, S9, S12, S13, S16, S17 as dated corrections).
 Gated: sales page (Fable) on code fix + docs fix; report draft (Sonnet) on sweep + docs fix;
 9b vision (Opus) on page; publish (main) last.
+
+## Wave 10 + sales page landed — 2026-09-18
+
+| Lane | Commit | What landed |
+|---|---|---|
+| docs fix | `6989d36` | Dated corrections S4–S6, S9, S12, S13, S16, S17. The `hate` gap is now stated as no measured gap at this n. Spec §10 superseded: real run leads, fixture demoted, 1.312 s |
+| code fix | `b3083bd` | S1: `diff` gates on VI indeterminate-rate rise (>5 pp) and effective-n collapse; both review reproductions now exit 1 REGRESSION naming indeterminacy. S2: `report` refuses on set_hash mismatch, run records carry prompt hashes and text (MultiJail/SEA-HELM only). S3: URL/body redaction. S6/S7/S8/S10 fixed. 43 tests. S11/S14/S15 deferred to the sweep agent (owns `local_model*.py`). Side-effect: fixture EN-miss 24→22 (2 safe-arm items were miscounted) |
+| sales page | `1baacca` | Fable. Data-driven from `site/*.json`; 412 fields recomputed in Python vs the page's own JS, 0 mismatches; 1440 and 390 px measured, 0 overflow; forbidden-word grep 0 claim hits. Placeholders: mailto, repo URL. Sweep section renders "No sweep data yet" until `sweep.json` lands |
+
+Live now — Sonnet 3/10: sweep (GPU), stale-number corrections (docs after the code fix),
+sales page (resumed briefly to reflect the fix-log). Gated: 9b vision review (Opus, Chrome)
+on the page agent releasing Chrome; report draft (Sonnet) on sweep; S11/S14/S15 patch on
+sweep; publish (main) last.
