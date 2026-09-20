@@ -1,0 +1,9 @@
+[submodule "projects/ai-ads-injection"]
+	path = projects/ai-ads-injection
+	url = https://github.com/VAD37/ai-ads-injection-2026-09-20.git
+[submodule "projects/agent-hermes-dashboard"]
+	path = projects/agent-hermes-dashboard
+	url = https://github.com/VAD37/agent-hermes-dashboard-2026-09-20.git
+[submodule "projects/ai-attack-defense"]
+	path = projects/ai-attack-defense
+	url = https://github.com/VAD37/ai-attack-defense-2026-09-20.git
